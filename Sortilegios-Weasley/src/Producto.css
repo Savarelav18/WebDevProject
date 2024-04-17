@@ -1,0 +1,57 @@
+.product-card{
+    background-color: #E4E0D8;
+    max-width: 292px;
+    max-height: 495px;
+    width: 292px;
+    height: 495px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 auto;
+    border-radius: 20px;
+}
+
+.product-image-card{
+    max-width: 80%;
+    display: flex;
+    align-self: center;
+
+}
+
+.informacion-producto{
+    min-height: 193px;
+    height: 193px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 12px 12px 12px 12px;
+    padding: 10px 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.informacion-producto NavLink{
+    height: 34px;
+    width: 255px;
+    background-color: #038BBB;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+.informacion-producto NavLink:hover{
+   background-color: #036d94;
+   transition: all .4s ease-in-out;
+}
+
+.cantidad-producto svg{
+    width: 20px;
+    
+}
