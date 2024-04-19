@@ -30,7 +30,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.informacion-producto NavLink{
+.informacion-producto a{
     height: 34px;
     width: 255px;
     background-color: #038BBB;
@@ -51,7 +51,9 @@
    transition: all .4s ease-in-out;
 }
 
-.cantidad-producto svg{
-    width: 20px;
+.cantidad-precio-producto{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     
 }
