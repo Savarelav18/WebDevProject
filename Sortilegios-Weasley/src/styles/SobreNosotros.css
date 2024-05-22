@@ -1,0 +1,32 @@
+.Sobre_Nosotros{
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  font-family: 'Courier New', Courier, monospace;
+  
+}
+.contenido h1{
+  margin: 3rem 3rem;
+}
+.contenido p{
+  margin: 1rem 3rem;
+}
+
+.integrantes, .nombres {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.integrantes img, .nombres h5{
+  max-width: 60px;
+  margin: 0rem 1rem;
+}
+@media(max-width:700px)  {
+    .gemelos{
+      max-width: 200px;
+    }
+}
+
+

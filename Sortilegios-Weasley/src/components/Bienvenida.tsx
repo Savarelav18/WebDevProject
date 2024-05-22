@@ -7,5 +7,6 @@ export const Bienvenida = () =>{
             No importa si eres un mago experimentado o un muggle curioso, en Sortilegios Weasley tenemos todo lo que necesitas para
             vivir una aventura mágica inolvidable.</p>
         </div>
+
     </article>
 }

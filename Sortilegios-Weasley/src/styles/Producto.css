@@ -11,10 +11,16 @@
     border-radius: 20px;
 }
 
+.product-card:hover{
+    transition: all .2s ease-in-out;
+    transform: scale(1.04);
+    cursor: pointer;
+}
+
 .product-image-card{
-    max-width: 80%;
     display: flex;
     align-self: center;
+    overflow: auto;
 
 }
 
@@ -30,7 +36,7 @@
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.informacion-producto a{
+.informacion-producto button{
     height: 34px;
     width: 255px;
     background-color: #038BBB;
@@ -43,8 +49,15 @@
     color: white;
     font-size: 18px;
     font-family: 'Courier New', Courier, monospace;
-
+    border: none;
+    cursor: pointer;
 }
+
+.informacion-producto button:hover{
+    background-color: #037199; 
+}
+
+
 
 .informacion-producto NavLink:hover{
    background-color: #036d94;
