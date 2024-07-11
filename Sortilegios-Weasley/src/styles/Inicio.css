@@ -1,0 +1,79 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #03223F;
+    
+}
+
+.Navegacion{
+    background-color: #E19F41;
+}
+
+.Navegacion ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    list-style: none;
+    padding:2em;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.Navegacion logotipo{
+    max-width: 100px;
+}
+
+.Navegacion logotipo img{
+    max-width: 100%;
+}
+
+.Navegacion li a{
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    transition: all .4s ease;
+    font-size: 16px;
+}
+
+.Navegacion li a:hover{
+    background-color: #dfb375;
+}
+
+.Navegacion svg{
+    margin: 10px;
+}
+.Navegacion svg:hover{
+    background-color: #dfb375;
+}
+.Navegacion label{
+    margin-right: 40px;
+}
+
+.Navegacion svg{
+    width: 30px;
+    cursor: pointer;
+}
+
+.Productos-mas-vendidos{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
+
+
+.Navegacion input{
+    font-family: inherit;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    transition: border-color 0.2s;
+    width: 400px;
+}
