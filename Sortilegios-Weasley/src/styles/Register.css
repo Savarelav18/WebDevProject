@@ -3,7 +3,7 @@
 
 .cont {
     display: flex;
-    margin-top: 5%;
+    margin-top: 4%;
     width: 100%;
     align-items: flex-start;
     justify-content: center;
@@ -12,6 +12,7 @@
 
 .registro {
     width: 400px;
+    height: 600px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     background: #FFFFFF;
@@ -21,19 +22,19 @@
   .cuadrado{
     background-color: #5A0012;
     border-color: black;
-    height: 577px;
+    height: 600px;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
   }
   
   .cuadrado img{ 
-    margin-top: 14%;
+    margin-top: 20%;
     width: 360px; 
     height: 475px;
  }
   
   p{
-    margin-top: 0.1rem;
+    margin-top: 0.1em;
     text-align: center;
     display: inline-block;
     width: 100%;
@@ -55,28 +56,30 @@
   
   .registro h1{
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 3.5rem;
   }
   
   .registro form {
-    padding: 4px 10px 30px 20px;
+    padding: 4px 30px 41px 40px;
     box-sizing: border-box;
     position: relative;
     font-size: 18px;
   }
   
-  .campotexto input{
+  .registro input {
+    position:relative;
+    margin: 0.1em 0 1.1em 0;
     width: 100%;
     padding: 0 7px 0 7px;
     box-sizing: border-box;
     height: 40px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Berylium', sans-serif;
     transition: 0.3s;
   }
   
   
-  .agregar input[type="submit"]{
+  .registro button{
     width: 100%;
     height: 47px;
     border: 0.5px groove;
