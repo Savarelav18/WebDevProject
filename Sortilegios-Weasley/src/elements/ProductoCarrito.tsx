@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/ProductoCarrito.css";
-import { Cantidad } from "../elements/cantidadProducto";
 import { useCarritoCompras } from "../context/carrito";
 import {productos} from "../mocks/productos.json"
 import { Stack } from "react-bootstrap";

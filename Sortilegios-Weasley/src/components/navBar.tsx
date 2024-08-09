@@ -1,22 +1,22 @@
 import { NavLink } from "react-router-dom"
-import { Carrito } from "./Carrito"
 import { CarritoIcono } from "./icons"
-import { useId } from "react"
-
+import { Button, Container,Nav, Navbar} from "react-bootstrap"
 import "../styles/navBar.css"
 import { useCarritoCompras } from "../context/carrito"
 
 export const NavBar= ()=>{
     const {abrirCarrito,cantidadCarrito} = useCarritoCompras()
-    return <nav className="Navegacion">
-            <ul>
-                <li><NavLink to="/">Inicio</NavLink></li>
-                <li><NavLink to="/Tienda">Tienda</NavLink></li>
-                <li><NavLink to="/SobreNosotros">Sobre nosotros</NavLink></li>
-                <li><label>Buscar</label><input type="text" placeholder="ingresa el producto que deseas buscar"/></li>
-                <li><NavLink to="/Login">Iniciar sesión</NavLink></li>
-                <li>
-                    <button className="carrito=button"
+    return (
+        <>
+          <Navbar className="shadow-sm mb-3 sticky-top" style={{backgroundColor:"#E19F41",width:"100%"}}>
+            <Container>
+              <Nav className="me-auto">
+                <Nav.Link to="/" as={NavLink} style={{margin:"0 2rem"}}>Inicio</Nav.Link>
+                <Nav.Link to="/Tienda" as={NavLink} style={{margin:"0 2rem"}}>Tienda</Nav.Link>
+                <Nav.Link to="/SobreNosotros" as={NavLink} style={{margin:"0 2rem"}}>Sobre nosotros</Nav.Link>
+                <Nav.Link to="/" as={NavLink} style={{margin:"0 2rem"}}>Iniciar sesión</Nav.Link>
+              </Nav>
+              <Button className="carrito=button"
                     style={{position:"relative",cursor:"pointer",backgroundColor:"transparent",outline:"none",border:"none"}}
                     onClick={abrirCarrito}>
                         <CarritoIcono></CarritoIcono>
@@ -32,8 +32,9 @@ export const NavBar= ()=>{
                         transform:"(25%,25%)"}}>
                         {cantidadCarrito}
                     </div>
-                    </button>
-                </li>
-            </ul>
-        </nav>
-}
+              </Button>
+            </Container>
+          </Navbar>
+        </>
+      );
+    }
