@@ -1,15 +1,20 @@
 import { NavBar } from '../components/navBar'
 import '../styles/SobreNosotros.css'
 import {Integrante} from '../elements/Integrante'
+import { Container, Row , Col} from 'react-bootstrap'
+import Image from 'react-bootstrap/Image';
 
 export const Sobre_Nosotros = () =>{
     return(
     <>
     <NavBar/>
-    <article className="Sobre_Nosotros">
-        <img className="gemelos" src="src/assets/hermanosW.jpg" alt="" />
-
-        <div className="contenido">
+    <Container>
+        <Row>
+            <Col sm={8}>
+            <Image className="gemelos" src="src/assets/hermanosW.jpg" fluid />;
+            </Col>
+            <Col sm={4}>
+            <div className="contenido" style={{color:"white"}}>
             <h1>Sobre Nosotros</h1>
 
             <p>Sortilegios Weasley, también conocida como Weasley & Weasley, es una tienda de artículos de bromas 
@@ -28,8 +33,10 @@ export const Sobre_Nosotros = () =>{
             </div>
 
         </div>
+            
+            </Col>
+        </Row>
+    </Container>
+    </>
+    )}
 
-    </article>
-    
-    </>)
-}

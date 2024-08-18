@@ -1,0 +1,34 @@
+.contenido-tienda{
+   display: grid;
+   grid-template-columns: 20% 1fr; 
+   height: 100vh;
+}
+
+.productos{
+    grid-column: 2;
+    margin: 0;
+}
+
+.filtros{
+    grid-column: 1;
+    background-color: #0C2D4D;
+}
+
+@media (max-width: 1024px) {
+    .contenido-tienda {
+        grid-template-columns: 20% 1fr; 
+    }
+}
+
+@media (max-width: 768px) {
+    .contenido-tienda {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenido-tienda {
+        grid-template-columns: 1fr;
+    }
+}
+

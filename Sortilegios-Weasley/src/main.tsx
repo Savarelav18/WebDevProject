@@ -7,6 +7,9 @@ import {
 import Inicio from './pages/Inicio.tsx'
 import './pages/Inicio.tsx'
 import { Sobre_Nosotros } from "./pages/Sobre_Nosotros.tsx";
+import { Tienda } from "./pages/Tienda.tsx";
+import { CarritoComprasProvider } from "./context/carrito.tsx";
+
 
 const router = createBrowserRouter([
   {
@@ -17,11 +20,17 @@ const router = createBrowserRouter([
     path: "/SobreNosotros",
     element: <Sobre_Nosotros/>,
   },
+  {
+    path: "/Tienda",
+    element: <Tienda/>,
+  },
 
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <CarritoComprasProvider>
     <RouterProvider router={router} />
+    </CarritoComprasProvider>
   </React.StrictMode>
 );

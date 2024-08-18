@@ -1,25 +1,38 @@
-import React from "react";
-import { ProductoCarrito } from "../elements/ProductoCarrito"
-import "../styles/Carrito.css"
+import { Button, Offcanvas, Stack } from "react-bootstrap";
+import "../styles/Carrito.css";
+import { useCarritoCompras } from "../context/carrito";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ProductoCarrito } from "../elements/ProductoCarrito";
+import {productos} from "../mocks/productos.json"
 
-export const Carrito = () =>{
-    return (
-        <div className="Carrito" style={{overflowY:"scroll", height:"720px"}}>
-            <img src="" alt="" />
-            <h3 style={{textAlign:"center"}}>Carrito de compras</h3>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <ProductoCarrito nombre="Producto1" imagen="" cantidad="2" valor={2} total={2}/>
-            <footer className="total-pago"><p>Total: 0 Galeones</p></footer>
-        </div>
-        
-    )
+type CarritoProps={
+  abierto:boolean
+}
+
+export function Carrito ({abierto}:CarritoProps){
+  const {cerrarCarrito,productosCarrito} = useCarritoCompras()
+  return <Offcanvas show={abierto} onHide={cerrarCarrito} placement="end">
+    <Offcanvas.Header closeButton>
+      <img src="./src/assets/WizzardWheezesLogo.jpg" alt="logo" style={{objectFit:"cover", maxHeight:"100px",marginRight:"15px"}}/>
+      <Offcanvas.Title>Carrito de compras</Offcanvas.Title>
+    </Offcanvas.Header>
+    <Offcanvas.Body>
+      <Stack gap={3}>
+        {productosCarrito.map(producto =>(
+          <ProductoCarrito key={producto.id} {...producto}/>
+        ))}
+      <div className="ms-auto fw-bold fs-5">
+          
+          Total {productosCarrito.reduce((total,itemCarrito)=>{
+            const item =  productos.find(i => i.id === itemCarrito.id)
+            return total+ (item?.precio || 0) * itemCarrito.cantidad
+            },0)
+            } Galeones
+      </div>
+      <div>
+        <Button className="w-100" style={{backgroundColor:"#0C2D4D"}}>Pagar</Button>
+      </div>
+      </Stack>
+    </Offcanvas.Body>
+  </Offcanvas>
 }
