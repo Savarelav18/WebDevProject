@@ -9,6 +9,8 @@ import './pages/Inicio.tsx'
 import { Sobre_Nosotros } from "./pages/Sobre_Nosotros.tsx";
 import { Tienda } from "./pages/Tienda.tsx";
 import { CarritoComprasProvider } from "./context/carrito.tsx";
+import { RegisterForm } from "./components/RegisterForm.tsx";
+import { LoginForm } from "./components/LoginForm.tsx";
 
 
 const router = createBrowserRouter([
@@ -24,7 +26,19 @@ const router = createBrowserRouter([
     path: "/Tienda",
     element: <Tienda/>,
   },
+  {
+    path: "/Login",
+    element: <LoginForm/>,
+  },
+  {
+    path: "/Register",
+    element: <RegisterForm/>,
+  },
 
+  {
+    path: "/SobreNosotros",
+    element: <Sobre_Nosotros/>,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(

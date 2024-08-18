@@ -8,7 +8,6 @@ body{
 }
 
 
-
 .Productos-mas-vendidos{
     display: grid;
     grid-template-columns: repeat(4, 2fr);
