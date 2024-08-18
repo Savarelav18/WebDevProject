@@ -1,0 +1,37 @@
+.producto-carrito{
+    border: 1px black solid ;
+    margin: 10px 2px 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.titulo-Producto{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 5px 10px;
+}
+
+
+.titulo-Producto svg{
+    width: 16px;
+    cursor: pointer;
+}
+
+
+.imagen-Producto{
+    width: 68px;
+}
+
+
+aside{
+    max-width: 70px;
+}
+
+.info{
+    max-width: 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}

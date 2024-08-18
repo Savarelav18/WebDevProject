@@ -1,0 +1,9 @@
+.Carrito{
+    background-color: white;
+    width: 300px;
+    height: 720px;
+    position: absolute;
+    right: 0.5em;
+    border-radius: 10px;
+    top: 5rem;
+}

@@ -7,10 +7,6 @@ import { useUserForm } from "../elements/variablesGlobales";
 
 export const RegisterForm = () =>{
     const {saveUser, setSaveUser, saveEmail, setSaveEmail, savePswrd, setSavePswrd } = useUserForm();
-
-    /* const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState(""); */
     const [validate, setValidate] = useState("");
     const [errorMensaje, setErrorMensaje] = useState("");
     const [loading, setLoading] = useState(false);
@@ -40,7 +36,7 @@ export const RegisterForm = () =>{
         setError(false);
         setLoading(true);
         console.log("Datos guardados:", { saveUser, saveEmail, savePswrd });
-        setErrorMensaje("✨¡Alohomora!✨")
+        setErrorMensaje("¡Bienvenido/a a Sortilegios Weasley!")
 
         setTimeout(() => {
             setLoading(false);
@@ -81,7 +77,7 @@ export const RegisterForm = () =>{
                 <label>CONFIRMAR CONTRASEÑA*</label>
                 <PasswordInput password={validate} setPassword={setValidate} />
                 {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)}
-                <button disabled={loading}>{loading ? "Cargando..." : "REGISTRARSE"}</button>
+                <button disabled={loading}>{loading ? "Registro exitoso" : "REGISTRARSE"}</button>
             
             </form>
         </div>
