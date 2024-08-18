@@ -13,7 +13,7 @@ export function Carrito ({abierto}:CarritoProps){
   const {cerrarCarrito,productosCarrito} = useCarritoCompras()
   return <Offcanvas show={abierto} onHide={cerrarCarrito} placement="end">
     <Offcanvas.Header closeButton>
-      <img src="https://weasley-wizard-wheezes.netlify.app/favicon.png" alt="logo" style={{objectFit:"cover", maxHeight:"100px"}}/>
+      <img src="./src/assets/WizzardWheezesLogo.jpg" alt="logo" style={{objectFit:"cover", maxHeight:"100px",marginRight:"15px"}}/>
       <Offcanvas.Title>Carrito de compras</Offcanvas.Title>
     </Offcanvas.Header>
     <Offcanvas.Body>

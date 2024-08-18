@@ -8,7 +8,7 @@
             "advertencia":"Puede traer problemas con gente enojada",
             "duracion":"NA",
             "cantidad":1,
-            "precio":3,
+            "precio":4,
             "calificacion":4.3,
             "categoria":"Bromas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/0/03/Anti_Gravity_Hat.gif"
@@ -21,7 +21,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":3,
+            "precio":1,
             "calificacion":3.3,
             "categoria":"juguetes",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/5d/Aviatomobile.jpg"
@@ -47,7 +47,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":15,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -60,7 +60,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":35,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -73,7 +73,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":75,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -86,7 +86,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":35,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -99,7 +99,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":2,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -112,7 +112,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":7,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -125,7 +125,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":9,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"
@@ -138,7 +138,7 @@
             "advertencia":"Es seguro",
             "duracion":"NA",
             "cantidad":1,
-            "precio":5,
+            "precio":11,
             "calificacion":2,
             "categoria":"herramientas",
             "imagen":"https://static.wikia.nocookie.net/harrypotter/images/5/57/Sticky_Trainers-0.jpg"

@@ -8,7 +8,7 @@ export const NavBar= ()=>{
     const {abrirCarrito,cantidadCarrito} = useCarritoCompras()
     return (
         <>
-          <Navbar className="shadow-sm mb-3 sticky-top" style={{backgroundColor:"#E19F41",width:"100%"}}>
+          <Navbar className="shadow-sm mb-3 sticky-top" style={{backgroundColor:"#E19F41"}}>
             <Container>
               <Nav className="me-auto">
                 <Nav.Link to="/" as={NavLink} style={{margin:"0 2rem"}}>Inicio</Nav.Link>
