@@ -4,32 +4,35 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import App from './App.tsx'
-import './App.css'
-import Login from "./pages/Login.tsx";
-import Register from "./pages/Register.tsx";
 import Inicio from './pages/Inicio.tsx'
 import './pages/Inicio.tsx'
 import { Sobre_Nosotros } from "./pages/Sobre_Nosotros.tsx";
+import { Tienda } from "./pages/Tienda.tsx";
+import { CarritoComprasProvider } from "./context/carrito.tsx";
+import { RegisterForm } from "./components/RegisterForm.tsx";
+import { LoginForm } from "./components/LoginForm.tsx";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Inicio/>,
   },
-
-
   {
-    path: "/",
-    element: <App/>,
+    path: "/SobreNosotros",
+    element: <Sobre_Nosotros/>,
+  },
+  {
+    path: "/Tienda",
+    element: <Tienda/>,
   },
   {
     path: "/Login",
-    element: <Login/>,
+    element: <LoginForm/>,
   },
   {
     path: "/Register",
-    element: <Register/>,
+    element: <RegisterForm/>,
   },
 
   {
@@ -40,6 +43,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
+    <CarritoComprasProvider>
     <RouterProvider router={router} />
+    </CarritoComprasProvider>
   </React.StrictMode>
 );

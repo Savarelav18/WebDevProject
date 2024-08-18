@@ -1,9 +1,16 @@
 .Carrito{
     background-color: white;
-    width: 300px;
-    height: 720px;
+    display: none;
+    padding: 32px;
     position: absolute;
-    right: 0.5em;
+    right: 0px;
+    top: 0px;
     border-radius: 10px;
-    top: 5rem;
+    position: fixed;
+    width: 300px;
+    margin-top: 5rem;
+    
+
 }
+
+

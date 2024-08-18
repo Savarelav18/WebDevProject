@@ -1,24 +1,30 @@
 import '../styles/Inicio.css'
 import '../styles/Bienvenida.css'
-import '../styles/Producto.css'
-
 import { NavBar } from '../components/navBar'
 import { Bienvenida } from '../components/Bienvenida'
 import { Producto } from '../components/Producto'
-import { Carrito } from '../components/Carrito'
+import {productos} from "../mocks/productos.json"
+import { Col, Container, Row} from 'react-bootstrap'
 
 function Inicio() {
   return (
     <>
       <NavBar/>
-      <Carrito hidden={false}/>
       <Bienvenida/>
+      <Container>
       <h1 style={{color:"white",margin:"1em 2.5em",fontSize:"42px"}}>Productos más vendidos</h1>
-      <div className='Productos-mas-vendidos'>
-      <Producto id={0} nombre='adas' precio='2' imagen='Producto2' calificacion={5}/>
-      </div>
+        <Row>
+          <Col>
+          <Producto productos={productos.filter(producto=>producto.id<=4)}/>
+          </Col>
+        </Row>
+      </Container>
+      
+      
     </>
   )
 }
 
 export default Inicio
+
+
