@@ -1,21 +1,17 @@
-import { useState } from "react";
 
 
-export const Cantidad = () => {
-    const [cantidad, setCantidad] = useState(1)
+interface CantidadPedidoProps {
+    cantidad: number;
+    setCantidad: (cantidad: number) => void;
+}
+export const CantidadPedido = ({ cantidad, setCantidad }: CantidadPedidoProps) => {
 
 
     const sumar = () => {
-        if (cantidad < 10) {
-            setCantidad(cantidad + 1)
-        } else
-            return
+        setCantidad(cantidad + 1)
     }
     const restar = () => {
-        if (cantidad > 1) {
-            setCantidad(cantidad - 1)
-        } else
-            return
+        setCantidad(cantidad - 1)
     }
     return (
         <>

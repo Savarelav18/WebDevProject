@@ -1,39 +1,43 @@
 
-import {Snitch} from "../elements/Snitch"
-import {Cantidad} from "../elements/cantidadProducto"
-import { FunctionComponent, useEffect, useState } from 'react'
+import { NavLink } from "react-router-dom";
+import { Snitch } from "../elements/Snitch"
+import { Cantidad } from "../elements/cantidadProducto"
 
-interface ProductoProps{
-    id:number;
-    nombre:string;
-    precio:string;
-    imagen?:string;
-    calificacion:number;
+interface ProductoProps {
+    id: number;
+    nombre: string;
+    precio: string;
+    imagen?: string;
+    calificacion: number;
 }
-    
 
-export const Producto:React.FC<ProductoProps>=({nombre, precio,imagen,calificacion}) => {
+
+export const Producto: React.FC<ProductoProps> = ({ id, nombre, precio, imagen, calificacion }) => {
     return (
         <article className="product-card">
-        <img className="product-image-card" src={`src/assets/${imagen}.png`} alt="producto" />
-        <div className="informacion-producto">
-            <h1>{nombre}</h1>
-            <div className="calificacion">
-                <Snitch calificacion={calificacion}/>
-            </div>
-            <div className="cantidad-precio-producto">
-                <span style={{display:"inline-flex", alignItems:"center"}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6" style={{width:"26px"}}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                    </svg>
-                    <p style={{fontSize:"18px"}}>{precio} Galeones</p>
-                </span>
-                <Cantidad/>
+            <NavLink to={"/DetalleProducto/" + id} className="product-image-container">
+                <img className="product-image-card" src={imagen?.startsWith("h") ? imagen : `src/assets/${imagen}.png`} alt="producto" />
+            </NavLink >
+            <div className="informacion-producto">
+                <NavLink to={"/DetalleProducto/" + id} className="product-title-redirect">
+                    <h1>{nombre}</h1>
+                </NavLink>
+                <div className="calificacion">
+                    <Snitch calificacion={calificacion} />
+                </div>
+                <div className="cantidad-precio-producto">
+                    <span style={{ display: "inline-flex", alignItems: "center" }}>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6" style={{ width: "26px" }}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+                        <p style={{ fontSize: "18px" }}>{precio} Galeones</p>
+                    </span>
+                    <Cantidad />
+                </div>
+
+                <button>añadir al carrito</button>
             </div>
 
-            <button>añadir al carrito</button>
-        </div>
-
-    </article>
+        </article >
     )
 }

@@ -7,21 +7,49 @@ import {
 import Inicio from './pages/Inicio.tsx'
 import './pages/Inicio.tsx'
 import { Sobre_Nosotros } from "./pages/Sobre_Nosotros.tsx";
+import { Pago } from "./pages/Pago.tsx"
+import { DetalleProducto } from "./pages/DetalleProducto.tsx";
+import { ProductsProvider } from "./context/ProductsContext.tsx";
+import { DetallePedido } from "./pages/DetallePedido.tsx";
+import { DetalleCompra } from "./pages/DetalleCompra.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Inicio/>,
+    element: <Inicio />,
   },
   {
     path: "/SobreNosotros",
-    element: <Sobre_Nosotros/>,
+    element: <Sobre_Nosotros />,
   },
-
+  {
+    path: "/DetalleProducto",
+    children: [
+      {
+        path: ":productId",
+        element: <DetalleProducto />,
+      }
+    ]
+  },
+  {
+    path: "/DetallePedido",
+    element: <DetallePedido />,
+  },
+  {
+    path: "/Pago",
+    element: <Pago />,
+  },
+  {
+    path: "/DetalleCompra",
+    element: <DetalleCompra />,
+  }
 ]);
+
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ProductsProvider>
+      <RouterProvider router={router} />
+    </ProductsProvider>
   </React.StrictMode>
 );

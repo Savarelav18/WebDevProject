@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap");
+.fondo-completo {
+  background-color: white;
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 20px;
+  font-family: "Cinzel";
+  padding: 40px 50px;
+  box-sizing: border-box;
+}
+.fondo-descripcion {
+  display: flex;
+}
+.container-big-img {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.big-image {
+  margin-bottom: 20px;
+  width: 80%;
+  height: 500px;
+  border-radius: 10px;
+  object-fit: none;
+}
+.mini-imgs-container {
+  width: 80%;
+  display: flex;
+  overflow: scroll;
+  justify-content: space-between;
+}
+.mini-imgs {
+  width: 20%;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.container-description {
+  width: 60%;
+}
+.container-description h2 {
+  font-weight: 500;
+  font-size: 3em;
+  margin-bottom: 1em;
+}
+.tittle-back {
+  display: flex;
+  justify-content: space-between;
+}
+.tittle-back .volver {
+  height: 3em;
+  margin: 0.5em;
+  border: none;
+  background-color: #038bbb;
+  color: white;
+  font-family: "Cinzel";
+  border-radius: 10px;
+  font-weight: 600;
+  padding: 10px;
+}
+.tittle-back .volver:hover {
+  opacity: 50%;
+}
+.container-description .calificacion {
+  display: flex;
+  width: 40%;
+}
+.container-description .calificacion h3 {
+  margin-right: 6%;
+}
+.different-lines {
+  margin: 1em 0;
+}
+.calificacion {
+  margin-bottom: 2em;
+}
+.same-line {
+  margin-top: 1em;
+  display: inline-block;
+}
+.anadir-carrito {
+  background-color: #e19f41;
+  color: White;
+  border: none;
+  font-family: "Cinzel";
+  border-radius: 10px;
+  font-weight: 600;
+  height: 3em;
+  padding: 10px;
+}
+.anadir-carrito:hover {
+  opacity: 0.5;
+}
+.boton-azul {
+  background-color: #038bbb;
+  color: White;
+  border: none;
+  font-family: "Cinzel";
+  border-radius: 10px;
+  font-weight: 600;
+  height: 3em;
+  padding: 10px;
+}
+.boton-azul:hover {
+  opacity: 0.5;
+}
+.two-buttons {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+.deja-comentario {
+  margin: 1em 0;
+}
+.area-comentario {
+  width: 100%;
+  height: 15vh;
+  border-radius: 10px;
+}
+.calificacion-snitch {
+  width: 10%;
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+}
+.der {
+  margin-left: 94%;
+}
+.usuario-coment {
+  margin: 1em 0;
+}
+.comentario {
+  width: 60%;
+}
+.calif-fecha {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+.calif-fecha p {
+  padding: 6px;
+}

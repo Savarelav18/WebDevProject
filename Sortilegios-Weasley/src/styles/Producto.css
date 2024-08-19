@@ -1,72 +1,78 @@
-.product-card{
-    background-color: #E4E0D8;
-    max-width: 292px;
-    max-height: 495px;
-    width: 292px;
-    height: 495px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    margin: 0 auto;
-    border-radius: 20px;
+.product-card {
+  background-color: #e4e0d8;
+  max-width: 292px;
+  max-height: 495px;
+  width: 292px;
+  height: 495px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: auto;
 }
 
-.product-card:hover{
-    transition: all .2s ease-in-out;
-    transform: scale(1.04);
-    cursor: pointer;
+.product-card:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.04);
+  cursor: pointer;
 }
 
-.product-image-card{
-    display: flex;
-    align-self: center;
-    overflow: auto;
+.product-image-container {
+  display: flex;
+  height: 302px;
+}
+.product-image-card {
+  display: flex;
+  align-self: center;
 
+  overflow: scroll;
 }
 
-.informacion-producto{
-    min-height: 193px;
-    height: 193px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: white;
-    border-radius: 12px 12px 12px 12px;
-    padding: 10px 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+.informacion-producto {
+  min-height: 193px;
+  height: 193px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 12px 12px 12px 12px;
+  padding: 10px 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.informacion-producto button{
-    height: 34px;
-    width: 255px;
-    background-color: #038BBB;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-family: 'Courier New', Courier, monospace;
-    border: none;
-    cursor: pointer;
+.informacion-producto button {
+  height: 34px;
+  width: 255px;
+  background-color: #038bbb;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-family: "Courier New", Courier, monospace;
+  border: none;
+  cursor: pointer;
 }
 
-.informacion-producto button:hover{
-    background-color: #037199; 
+.informacion-producto button:hover {
+  background-color: #037199;
 }
 
-
-
-.informacion-producto NavLink:hover{
-   background-color: #036d94;
-   transition: all .4s ease-in-out;
+.informacion-producto NavLink:hover {
+  background-color: #036d94;
+  transition: all 0.4s ease-in-out;
 }
 
-.cantidad-precio-producto{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
+.cantidad-precio-producto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product-title-redirect {
+  text-decoration: none;
+  color: black;
 }
