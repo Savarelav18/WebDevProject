@@ -1,0 +1,108 @@
+@import url(https://fonts.googleapis.com/css?family=Cinzel);
+@import url('https://fonts.cdnfonts.com/css/berylium-2');
+
+.cont {
+  display: flex;
+  margin-top: 5%;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: center;
+  font-family: 'Cinzel';
+}
+
+.formulario {
+  width: 400px;
+  height: 481px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  background: #FFFFFF;
+  opacity: .7;
+}
+
+.imagen{
+  background-color: #038BBB;
+  border-color: black;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.imagen img{ width: 360px; height: 475px; }
+
+.formulario p{
+  margin-top: 0.1rem;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-size: 15px;
+}
+
+.formulario span a{
+  color: #590B13;
+  text-decoration: none;
+}
+
+.formulario span{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  font-family: 'Cinzel-Black';
+  font-size: 19px;
+} 
+
+.formulario h1{
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.formulario form {
+  margin-top: 1em;
+  padding: 4px 30px 41px 40px;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 18px;
+}
+.mensaje p{
+  font-size: 20px;
+  text-decoration: double;
+}
+.error{
+  color: #821620;
+}
+.formulario input {
+  position:relative;
+  margin: 0.1em 0 1.1em 0;
+  width: 100%;
+  padding: 0 7px 0 7px;
+  box-sizing: border-box;
+  height: 40px;
+  font-size: 18px;
+  font-family: 'Berylium', sans-serif;
+  transition: 0.3s;
+}
+
+.formulario button{
+  width: 100%;
+  height: 47px;
+  border: 0.5px groove;
+  background: #038BBB;
+  border-color: rgb(58, 58, 58);
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: 'Cinzel';
+  color: white;
+  cursor: pointer;
+  outline: none;
+  margin-top: 10%;
+  display: inline-block;
+  transition-duration: .3s;
+  transition-property: transform;
+
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+
+  &:hover {
+    transform: scale(.9);
+  }
+
+}

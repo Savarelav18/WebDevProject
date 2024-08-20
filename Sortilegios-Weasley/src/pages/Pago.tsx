@@ -33,7 +33,7 @@ export function Pago() {
             <NavBar />
             <div className="cuerpo">
                 <h2>Realizar pago</h2>
-                <div className="container">
+                <div className="container-pago">
                     <div className="form-izq">
                         <form action="">
                             <div>
@@ -60,7 +60,7 @@ export function Pago() {
                             <button onClick={handlePago}>Realizar pago</button>
                         </form>
                     </div>
-                    <div className="imagen">
+                    <div className="imagen-grin">
                         <img src={imag} alt="" />
                     </div>
                 </div>

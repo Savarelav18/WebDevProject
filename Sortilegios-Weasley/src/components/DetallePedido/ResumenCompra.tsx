@@ -2,15 +2,15 @@ import { MiniDescProd } from "../../elements/DetallePedido/MiniDescProd";
 import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivisas";
 import { mockProductos } from "../../mocks/MockProductos.ts";
 import { useState } from "react";
-import { ProductoCarrito } from "../../types";
+import {Producto, ProductoCarrito} from "../../types";
 import imag from "../../assets/DetallePedido/selloGringottts.png";
 import { useNavigate } from "react-router-dom";
 interface ResumenCompraProps {
-    productosCarro: Array<ProductoCarrito>;
+    productosCarro: Array<Producto>;
 }
 
 export function ResumenCompra({ productosCarro }: ResumenCompraProps) {
-    const total = productosCarro.reduce((a, b) => a + magicDivisesToMuggle(mockProductos.find(x => x.id === b.id_producto)!.divisa, mockProductos.find(x => x.id === b.id_producto)!.precio)! * b.cantidad, 0);
+    const total = productosCarro.reduce((a, b) => a + magicDivisesToMuggle(b.divisa, b.precio)! * b.cantidad, 0);
     const navigate = useNavigate();
     const [direccion, setDireccion] = useState("");
     function handleCompra() {
@@ -26,14 +26,14 @@ export function ResumenCompra({ productosCarro }: ResumenCompraProps) {
             }
         });
     }
-
+    console.log(productosCarro)
     return (
         <div className="resumen-compra">
             <h2>Resumen de compra</h2>
             <hr />
             {productosCarro.map(producto => {
-                const productoFind = mockProductos.find(x => x.id === producto.id_producto)!;
-                return <MiniDescProd name={productoFind.nombre} price={productoFind.precio} quantity={producto.cantidad} divise={productoFind.divisa} />;
+
+                return <MiniDescProd name={producto.nombre} price={producto.precio} quantity={producto.cantidad} divise={producto.divisa} />;
             }
             )}
             <hr />

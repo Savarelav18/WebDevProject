@@ -1,0 +1,6 @@
+{
+  "usuarios": [
+    {"username": "adminlaura", "email": "laneirab@unal.edu.co", "password": "12345678"},
+    {"username": "admin", "email": "admin@muggle.com", "password": "87654321"}
+  ]
+  }

@@ -22,7 +22,7 @@
   width: 80%;
   height: 500px;
   border-radius: 10px;
-  object-fit: none;
+  object-fit: cover;
 }
 .mini-imgs-container {
   width: 80%;

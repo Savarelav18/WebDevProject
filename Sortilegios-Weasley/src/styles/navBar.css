@@ -1,0 +1,65 @@
+Nav{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+}
+
+.Navegacion{
+    background-color: #E19F41;
+}
+
+.Navegacion ul{
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    list-style: none;
+    padding:0.8em;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.Navegacion logotipo{
+    max-width: 100px;
+}
+
+.Navegacion logotipo img{
+    max-width: 100%;
+}
+
+.Navegacion li a{
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    border-radius: 5px;
+    transition: all .4s ease;
+    font-size: 16px;
+}
+
+.Navegacion a:hover{
+    background-color: #dfb375;
+}
+
+.Navegacion svg{
+    margin: 10px;
+}
+.Navegacion label{
+    margin-right: 40px;
+}
+
+.Navegacion svg{
+    width: 30px;
+    cursor: pointer;
+}
+
+
+.Navegacion input{
+    font-family: inherit;
+    border: 0;
+    border-bottom: 2px solid gray;
+    outline: 0;
+    font-size: 16px;
+    color: white;
+    background: transparent;
+    transition: border-color 0.2s;
+    width: 400px;
+}

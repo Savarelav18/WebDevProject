@@ -12,7 +12,7 @@
   color: #d3a625;
   font-size: 3em;
 }
-.container {
+.container-pago {
   display: flex;
   justify-content: space-between;
 }
@@ -24,7 +24,7 @@ form div input {
   width: 100%;
   margin-bottom: 2em;
 }
-.imagen img {
+.imagen-grin img {
   width: 400px;
 }
 #primero {

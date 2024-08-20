@@ -12,15 +12,20 @@ import { DetalleProducto } from "./pages/DetalleProducto.tsx";
 import { ProductsProvider } from "./context/ProductsContext.tsx";
 import { DetallePedido } from "./pages/DetallePedido.tsx";
 import { DetalleCompra } from "./pages/DetalleCompra.tsx";
+import { Tienda } from "./pages/Tienda.tsx";
+import { CarritoComprasProvider } from "./context/carrito.tsx";
+import { RegisterForm } from "./components/RegisterForm.tsx";
+import { LoginForm } from "./components/LoginForm.tsx";
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Inicio />,
+    element: <Inicio/>,
   },
   {
     path: "/SobreNosotros",
-    element: <Sobre_Nosotros />,
+    element: <Sobre_Nosotros/>,
   },
   {
     path: "/DetalleProducto",
@@ -42,14 +47,33 @@ const router = createBrowserRouter([
   {
     path: "/DetalleCompra",
     element: <DetalleCompra />,
-  }
+  },
+  {
+    path: "/Tienda",
+    element: <Tienda/>,
+  },
+  {
+    path: "/Login",
+    element: <LoginForm/>,
+  },
+  {
+    path: "/Register",
+    element: <RegisterForm/>,
+  },
+
+  {
+    path: "/SobreNosotros",
+    element: <Sobre_Nosotros/>,
+  },
 ]);
 
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ProductsProvider>
+        <CarritoComprasProvider>
       <RouterProvider router={router} />
+        </CarritoComprasProvider>
     </ProductsProvider>
   </React.StrictMode>
 );

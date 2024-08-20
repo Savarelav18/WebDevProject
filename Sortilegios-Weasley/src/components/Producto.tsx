@@ -1,43 +1,60 @@
-
-import { NavLink } from "react-router-dom";
 import { Snitch } from "../elements/Snitch"
-import { Cantidad } from "../elements/cantidadProducto"
+import "../styles/Producto.css"
+import { producto } from "../context/type"
+import {useCarritoCompras} from "../context/carrito"
+import { Stack } from "react-bootstrap";
+import { IconoPeso } from "../components/icons";
+import { NavLink } from "react-router-dom";
 
-interface ProductoProps {
-    id: number;
-    nombre: string;
-    precio: string;
-    imagen?: string;
-    calificacion: number;
+
+
+interface ProductosProp{
+productos:producto[]
+
 }
+    
 
-
-export const Producto: React.FC<ProductoProps> = ({ id, nombre, precio, imagen, calificacion }) => {
+export const Producto:React.FC<ProductosProp> = ({productos}) => {
+    const {getCantidadProducto,aumentarCantidadProducto,removerProducto} = useCarritoCompras()
     return (
-        <article className="product-card">
-            <NavLink to={"/DetalleProducto/" + id} className="product-image-container">
-                <img className="product-image-card" src={imagen?.startsWith("h") ? imagen : `src/assets/${imagen}.png`} alt="producto" />
-            </NavLink >
-            <div className="informacion-producto">
-                <NavLink to={"/DetalleProducto/" + id} className="product-title-redirect">
-                    <h1>{nombre}</h1>
-                </NavLink>
-                <div className="calificacion">
-                    <Snitch calificacion={calificacion} />
-                </div>
-                <div className="cantidad-precio-producto">
-                    <span style={{ display: "inline-flex", alignItems: "center" }}>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-6 h-6" style={{ width: "26px" }}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                        <p style={{ fontSize: "18px" }}>{precio} Galeones</p>
-                    </span>
-                    <Cantidad />
-                </div>
 
-                <button>añadir al carrito</button>
-            </div>
+        <>
+            <main className="productos">
+                <ul>
+                    {productos.map(producto =>(
+                        <li key={producto.id} className="product-card">
+                            <div className="product-image-container">
+                                <NavLink to={"/DetalleProducto/" + producto.id} className="product-image-container">
+                                <img
+                                src={producto.imagenes[0]}
+                                alt={producto.nombre}
+                                className="product-image-card"
+                            />
+                                </NavLink>
+                            </div>
+                            <div className="informacion-producto">
+                                <NavLink to={"/DetalleProducto/" + producto.id} className="product-title-redirect">
+                                <h3>{producto.nombre}</h3>
+                                    </NavLink>
+                                <div className="calificacion">
+                                    <Snitch calificacion={producto.calificacion} />
+                                </div>
+                                <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
+                                    <div className="d-flex align-items-center">
+                                        <span className="d-flex align-items-center">
+                                        <IconoPeso/>
+                                        <p style={{ fontSize: "18px", margin:"0" }}>{producto.precio} Galeones</p>
+                                        </span>
+                                    </div>
+                                </Stack>
 
-        </article >
+                                {getCantidadProducto(producto.id)===0?(<button onClick={()=> aumentarCantidadProducto(producto.id)}>Añadir al carrito</button>):(<button onClick={()=>removerProducto(producto.id)} style={{backgroundColor:"#F3532F"}}>Remover</button>)}
+
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </main>
+        </>
     )
 }

@@ -11,9 +11,9 @@ export const Snitch:React.FC<SnitchProps>=({calificacion}) => {
         const stars: JSX.Element[] = [];
         for (let i = 1; i <= 5; i++) {
           if (i <= calificacion) {
-            stars.push(<img key={i} src={snitchLlena} alt={`Estrella llena ${i}`} />);
+            stars.push(<img key={i} src={snitchLlena} alt={`Estrella llena ${i}`} style={{maxWidth:"29px"}} />);
           } else {
-            stars.push(<img key={i} src={snitchVacia} alt={`Estrella vacía ${i}`} />);
+            stars.push(<img key={i} src={snitchVacia} alt={`Estrella vacía ${i}`} style={{maxWidth:"29px"}} />);
           }
         }
         return stars;
