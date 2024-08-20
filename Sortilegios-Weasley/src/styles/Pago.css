@@ -1,0 +1,52 @@
+.cuerpo {
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: "Cinzel";
+  box-sizing: border-box;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.cuerpo h2 {
+  color: #d3a625;
+  font-size: 3em;
+}
+.container-pago {
+  display: flex;
+  justify-content: space-between;
+}
+form div .bloque {
+  display: block;
+}
+form div input {
+  font-family: "Cinzel";
+  width: 100%;
+  margin-bottom: 2em;
+}
+.imagen-grin img {
+  width: 400px;
+}
+#primero {
+  margin-top: 3rem;
+}
+.montoCOP {
+  font-weight: 800;
+  color: #d3a625;
+}
+.monto {
+  margin-bottom: 1rem;
+}
+.form-izq form button {
+  background-color: #d3a625;
+  font-size: 1rem;
+  font-family: "Cinzel";
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.form-izq form button:hover {
+  opacity: 0.5;
+}

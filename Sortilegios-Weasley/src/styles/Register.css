@@ -33,20 +33,20 @@
     height: 475px;
  }
   
-  p{
+  .registro p{
     margin-top: 0.1em;
     text-align: center;
     display: inline-block;
     width: 100%;
     font-size: 15px;
   }
-  
-  a{
+
+.registro span a{
     color: #590B13;
     text-decoration: none;
   }
-  
-  span{  
+
+.registro span{
     text-align: center;
     display: inline-block;
     width: 100%;

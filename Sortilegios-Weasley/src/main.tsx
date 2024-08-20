@@ -7,6 +7,11 @@ import {
 import Inicio from './pages/Inicio.tsx'
 import './pages/Inicio.tsx'
 import { Sobre_Nosotros } from "./pages/Sobre_Nosotros.tsx";
+import { Pago } from "./pages/Pago.tsx"
+import { DetalleProducto } from "./pages/DetalleProducto.tsx";
+import { ProductsProvider } from "./context/ProductsContext.tsx";
+import { DetallePedido } from "./pages/DetallePedido.tsx";
+import { DetalleCompra } from "./pages/DetalleCompra.tsx";
 import { Tienda } from "./pages/Tienda.tsx";
 import { CarritoComprasProvider } from "./context/carrito.tsx";
 import { RegisterForm } from "./components/RegisterForm.tsx";
@@ -21,6 +26,27 @@ const router = createBrowserRouter([
   {
     path: "/SobreNosotros",
     element: <Sobre_Nosotros/>,
+  },
+  {
+    path: "/DetalleProducto",
+    children: [
+      {
+        path: ":productId",
+        element: <DetalleProducto />,
+      }
+    ]
+  },
+  {
+    path: "/DetallePedido",
+    element: <DetallePedido />,
+  },
+  {
+    path: "/Pago",
+    element: <Pago />,
+  },
+  {
+    path: "/DetalleCompra",
+    element: <DetalleCompra />,
   },
   {
     path: "/Tienda",
@@ -41,10 +67,13 @@ const router = createBrowserRouter([
   },
 ]);
 
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <CarritoComprasProvider>
-    <RouterProvider router={router} />
-    </CarritoComprasProvider>
+    <ProductsProvider>
+        <CarritoComprasProvider>
+      <RouterProvider router={router} />
+        </CarritoComprasProvider>
+    </ProductsProvider>
   </React.StrictMode>
 );

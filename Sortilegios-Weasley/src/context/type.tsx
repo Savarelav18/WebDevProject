@@ -9,5 +9,5 @@ export interface producto{
     precio:number,
     calificacion:number,
     categoria:string,
-    imagen:string
+    imagenes:string
 }

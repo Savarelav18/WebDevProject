@@ -1,0 +1,39 @@
+.contenedor {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px auto;
+  font-family: "Cinzel";
+  box-sizing: border-box;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+.img-container {
+  display: flex;
+  margin: 1em 0;
+}
+.img-container img {
+  max-width: 10%;
+  height: auto;
+  overflow: clip;
+  display: block;
+  margin-right: 20px;
+}
+.container-total {
+  display: flex;
+  justify-content: space-between;
+}
+.contenedor .total {
+  margin: 1em 0;
+}
+.inicio {
+  padding: 10px 20px;
+  border: 0;
+  background-color: #d3a625;
+  border-radius: 10px;
+  margin-left: 87%;
+  font-family: "Cinzel";
+}
+.inicio:hover {
+  opacity: 0.5;
+}

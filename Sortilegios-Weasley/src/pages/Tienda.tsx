@@ -1,14 +1,15 @@
 
 import { NavBar } from "../components/navBar"
 import { Producto } from "../components/Producto"
-import {productos} from "../mocks/productos.json"
 import { Button, Container, Stack, Col,Row } from "react-bootstrap"
 import "../styles/Tienda.css"
 import { DownArrowIcon, HerramientasIcon, JuguetesIcon, PotionIcon, UpArrowIcon } from "../components/icons"
 import { useState } from "react"
 import Form from 'react-bootstrap/Form';
+import {mockProductos} from "../mocks/MockProductos.ts";
 
 export const Tienda= () => {
+    const productos = mockProductos;
 
     const [productosTienda,setProductos] = useState(productos)
     const [productosfiltrados,setProductosFiltrados] = useState(productos)
@@ -38,7 +39,7 @@ export const Tienda= () => {
                 <Col sm={2}>
                     <Container>
                         <h1>Filtros</h1>
-                        <Button onClick={()=> filtroCateforia("herramientas")} style={{outline:"none", border:"none", backgroundColor:"transparent", display:"flex",alignItems:"center"}}><span style={{marginRight:"5px"}}><PotionIcon/></span> Pociones</Button>
+                        <Button onClick={()=> filtroCateforia("pociones")} style={{outline:"none", border:"none", backgroundColor:"transparent", display:"flex",alignItems:"center"}}><span style={{marginRight:"5px"}}><PotionIcon/></span> Pociones</Button>
                         <Button onClick={()=> filtroCateforia("Bromas")} style={{outline:"none", border:"none", backgroundColor:"transparent", display:"flex",alignItems:"center"}}><span style={{marginRight:"5px"}}><HerramientasIcon/></span> Herramientas</Button>
                         <Button onClick={()=> filtroCateforia("juguetes")} style={{outline:"none", border:"none", backgroundColor:"transparent", display:"flex",alignItems:"center"}}><span style={{marginRight:"5px"}}><JuguetesIcon/></span> Juguetes</Button>
                     </Container>

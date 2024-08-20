@@ -8,7 +8,7 @@ type CarritoComprasProviderProps = {
 
 
 
-type ItemCarrito={
+export type ItemCarrito={
     id:number
     cantidad:number
 }

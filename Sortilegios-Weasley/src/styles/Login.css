@@ -28,7 +28,7 @@
 
 .imagen img{ width: 360px; height: 475px; }
 
-p{
+.formulario p{
   margin-top: 0.1rem;
   text-align: center;
   display: inline-block;
@@ -36,12 +36,12 @@ p{
   font-size: 15px;
 }
 
-a{
+.formulario span a{
   color: #590B13;
   text-decoration: none;
 }
 
-span{  
+.formulario span{
   text-align: center;
   display: inline-block;
   width: 100%;

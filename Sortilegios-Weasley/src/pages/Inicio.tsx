@@ -1,12 +1,15 @@
 import '../styles/Inicio.css'
 import '../styles/Bienvenida.css'
+import '../styles/Producto.css'
+
 import { NavBar } from '../components/navBar'
 import { Bienvenida } from '../components/Bienvenida'
 import { Producto } from '../components/Producto'
-import {productos} from "../mocks/productos.json"
 import { Col, Container, Row} from 'react-bootstrap'
+import { mockProductos } from '../mocks/MockProductos'
 
 function Inicio() {
+    const productos = mockProductos;
   return (
     <>
       <NavBar/>
@@ -19,12 +22,10 @@ function Inicio() {
           </Col>
         </Row>
       </Container>
-      
-      
+
+
     </>
   )
 }
 
 export default Inicio
-
-
