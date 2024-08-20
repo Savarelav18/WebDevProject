@@ -1,6 +1,6 @@
 import { Snitch } from "../elements/Snitch"
 import "../styles/Producto.css"
-import { producto } from "../context/type"
+import { Producto as producto } from "../types"
 import {useCarritoCompras} from "../context/carrito"
 import { Stack } from "react-bootstrap";
 import { IconoPeso } from "../components/icons";

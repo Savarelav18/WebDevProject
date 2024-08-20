@@ -2,12 +2,13 @@ import { mockProductos } from "../../mocks/MockProductos";
 import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivisas";
 import { ProductoCarrito } from "../../types.ts";
 import { CantidadPedido } from "../../elements/DetallePedido/cantidadProductoPedido.tsx";
+import { ItemCarrito, useCarritoCompras } from "../../context/carrito.tsx";
 interface ProductoCompraProps {
-    productoCarrito: ProductoCarrito;
-    setCantidad: (cantidad: number) => void;
+    productoCarrito: ItemCarrito;
 }
-export function ProductoCompra({ productoCarrito, setCantidad }: ProductoCompraProps) {
-    const producto = mockProductos.find((producto) => producto.id === productoCarrito.id_producto);
+export function ProductoCompra({ productoCarrito}: ProductoCompraProps) {
+    const {removerProducto} = useCarritoCompras()
+    const producto = mockProductos.find((producto) => producto.id === productoCarrito.id);
     return (
         <div className="producto-muestra">
             <h3>{producto?.nombre}</h3>
@@ -18,8 +19,8 @@ export function ProductoCompra({ productoCarrito, setCantidad }: ProductoCompraP
                     <p>{producto?.descripcion}</p>
                     <div className="botones">
                         <div className="bot">
-                            <button className="button-eliminar" onClick={() => { setCantidad(0) }}>Eliminar</button>
-                            <CantidadPedido cantidad={productoCarrito.cantidad} setCantidad={setCantidad} />
+                            <button className="button-eliminar" onClick={() => removerProducto(productoCarrito.id)}>Eliminar</button>
+                            <CantidadPedido cantidad={productoCarrito.cantidad} id={productoCarrito.id} />
                         </div>
                         <div className="cost">
                             <p className="costo">$ {COPFormmater(magicDivisesToMuggle(producto!.divisa, producto!.precio)! * productoCarrito.cantidad)}</p>

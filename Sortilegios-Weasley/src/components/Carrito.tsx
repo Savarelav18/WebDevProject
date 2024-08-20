@@ -3,7 +3,7 @@ import "../styles/Carrito.css";
 import { useCarritoCompras } from "../context/carrito";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ProductoCarrito } from "../elements/ProductoCarrito";
-import {productos} from "../mocks/productos.json"
+import {mockProductos} from "../mocks/MockProductos"
 
 type CarritoProps={
   abierto:boolean
@@ -24,7 +24,7 @@ export function Carrito ({abierto}:CarritoProps){
       <div className="ms-auto fw-bold fs-5">
           
           Total {productosCarrito.reduce((total,itemCarrito)=>{
-            const item =  productos.find(i => i.id === itemCarrito.id)
+            const item =  mockProductos.find(i => i.id === itemCarrito.id)
             return total+ (item?.precio || 0) * itemCarrito.cantidad
             },0)
             } Galeones

@@ -1,12 +1,13 @@
+import { ItemCarrito } from "../../context/carrito.tsx";
 import { mockProductos } from "../../mocks/MockProductos.ts";
 import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivisas";
 import { ProductoCarrito } from "../../types"
 
 interface ProductoCompraProps {
-    prod: ProductoCarrito;
+    prod: ItemCarrito;
 }
 export function ProductoCompra({ prod }: ProductoCompraProps) {
-    const producto = mockProductos.find((producto) => producto.id === prod.id_producto);
+    const producto = mockProductos.find((producto) => producto.id === prod.id);
     return (
 
         <>

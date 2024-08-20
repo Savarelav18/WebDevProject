@@ -5,12 +5,16 @@ import { useState } from "react";
 import {Producto, ProductoCarrito} from "../../types";
 import imag from "../../assets/DetallePedido/selloGringottts.png";
 import { useNavigate } from "react-router-dom";
+import {ItemCarrito} from "../../context/carrito.tsx"
 interface ResumenCompraProps {
-    productosCarro: Array<Producto>;
+    productosCarro: ItemCarrito[];
 }
 
-export function ResumenCompra({ productosCarro }: ResumenCompraProps) {
-    const total = productosCarro.reduce((a, b) => a + magicDivisesToMuggle(b.divisa, b.precio)! * b.cantidad, 0);
+export function ResumenCompra({ productosCarro }:ResumenCompraProps) {
+    const total = productosCarro.reduce((total,itemCarrito)=>{
+            const item =  mockProductos.find(i => i.id === itemCarrito.id)
+            return total+ (magicDivisesToMuggle(item!.divisa,item!.precio) || 0) * itemCarrito.cantidad
+            },0);
     const navigate = useNavigate();
     const [direccion, setDireccion] = useState("");
     function handleCompra() {
@@ -32,8 +36,8 @@ export function ResumenCompra({ productosCarro }: ResumenCompraProps) {
             <h2>Resumen de compra</h2>
             <hr />
             {productosCarro.map(producto => {
-
-                return <MiniDescProd name={producto.nombre} price={producto.precio} quantity={producto.cantidad} divise={producto.divisa} />;
+                const item =  mockProductos.find(i => i.id === producto.id)
+                return <MiniDescProd name={item!.nombre} price={item!.precio} quantity={producto!.cantidad} divise={item!.divisa} />;
             }
             )}
             <hr />

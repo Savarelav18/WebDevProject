@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/ProductoCarrito.css";
 import { useCarritoCompras } from "../context/carrito";
-import {productos} from "../mocks/productos.json"
+import {mockProductos} from "../mocks/MockProductos"
 import { Stack } from "react-bootstrap";
 import { Button} from "react-bootstrap"
 import { IconoMas, IconoMenos } from "../components/icons";
@@ -12,12 +12,13 @@ interface ProductoCarritoProps {
 }
 
 export const ProductoCarrito: React.FC<ProductoCarritoProps> = ({ id,cantidad }) => {
+  const productos = mockProductos
   const {removerProducto,aumentarCantidadProducto,disminuirCantidadProducto} = useCarritoCompras()
   const item =  productos.find(i => i.id === id)
   if (item == null) return null
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-      <img src={item.imagen} style={{width:"125px", height:"75px", objectFit:"cover"}} alt="" />
+      <img src={item.imagenes[0]} style={{width:"125px", height:"75px", objectFit:"cover"}} alt="" />
       <div className="me-auto">
         <div>
           {item.nombre}{" "}
