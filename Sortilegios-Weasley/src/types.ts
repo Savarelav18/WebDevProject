@@ -21,6 +21,8 @@ export interface Producto {
     categoria: Categoria;
     divisa: Divisa;
     calificacion: number;
+    efectoVisual: string;
+    efecto: string;
     comentarios: Comentario[];
 }
 export interface ProductoCarrito {

@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { Producto } from "../../types.ts";
 import { Button } from "../../elements/Button.tsx";
 import { Snitch } from "../../elements/Snitch.tsx";
@@ -5,20 +6,30 @@ import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivi
 import { useNavigate } from "react-router-dom";
 import { Cantidad } from "../../elements/cantidadProducto.tsx";
 import { Campo } from "../../elements/DetalleProducto/Campo.tsx";
+
 interface DescripcionProps {
     producto: Producto;
 }
+
 export function Descripcion({ producto }: DescripcionProps) {
     const navigate = useNavigate();
+    const [efectoVisible, setEfectoVisible] = useState(false);
+
     function handleVolver() {
-        navigate("/");
+        navigate("/Tienda");
+    }
+
+    function mostrarEfecto() {
+        setEfectoVisible(true);
+        setTimeout(() => {
+            setEfectoVisible(false);
+        }, 5000);
     }
     return (
         <div className="container-description">
             <div className="tittle-back">
                 <h2>{producto?.nombre}</h2>
                 <Button className="volver" onClick={handleVolver}>Volver</Button>
-                {/*agregar vuelta atras*/}
             </div>
             <div className="calificacion">
                 <h3>Calificación: </h3>
@@ -33,8 +44,13 @@ export function Descripcion({ producto }: DescripcionProps) {
             <Cantidad />
             <div className="different-lines two-buttons">
                 <Button className="anadir-carrito">Añadir al carrito</Button>
-                <Button className="boton-azul">Ver Efecto</Button>
+                <Button className="boton-azul" onClick={mostrarEfecto}>Ver Efecto</Button>
             </div>
+            {efectoVisible && (
+                <div className={producto?.efectoVisual}>
+                    <div className={producto?.efecto}></div>
+                </div>
+            )}
         </div>
-    )
+    );
 }
