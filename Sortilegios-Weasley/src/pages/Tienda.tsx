@@ -66,12 +66,12 @@ export const Tienda = () => {
                     placeholder="Search"
                     className="me-2"
                     aria-label="Search"
+                    onChange={handleSearch}
                   />
-                  <Button variant="success">Search</Button>
                 </Form>
                 <Container style={{marginTop:"2rem"}}>
                     <Row style={{gap:"2rem", display:"flex",justifyContent:"center"}}>
-                    <Producto productos={productosfiltrados}/>
+                    <Producto productos={productosFiltrados}/>
                     </Row>
                 </Container>
                 </Col>
