@@ -56,14 +56,14 @@
   
   .registro h1{
     text-align: center;
-    margin-top: 3.5rem;
+    margin-top: 1.5rem;
   }
   
   .registro form {
     padding: 4px 30px 41px 40px;
     box-sizing: border-box;
     position: relative;
-    font-size: 18px;
+    font-size: 15px;
   }
   
   .registro input {
@@ -91,7 +91,6 @@
     color: white;
     cursor: pointer;
     outline: none;
-    margin-top: 3%;
     display: inline-block;
     transition-duration: .3s;
     transition-property: transform;

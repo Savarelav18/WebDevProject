@@ -2,59 +2,36 @@ import { Snitch } from "../elements/Snitch"
 import "../styles/Producto.css"
 import { Producto as producto } from "../types"
 import {useCarritoCompras} from "../context/carrito"
-import { Stack } from "react-bootstrap";
+import {Card, Button} from "react-bootstrap";
 import { IconoPeso } from "../components/icons";
-import { NavLink } from "react-router-dom";
 
-
-
-interface ProductosProp{
-productos:producto[]
-
+interface ProductosProp {
+    productos: producto[];
 }
-    
 
-export const Producto:React.FC<ProductosProp> = ({productos}) => {
-    const {getCantidadProducto,aumentarCantidadProducto,removerProducto} = useCarritoCompras()
+export const Producto: React.FC<ProductosProp> = ({ productos }) => {
+    const { getCantidadProducto, aumentarCantidadProducto, removerProducto } = useCarritoCompras();
+
     return (
-
         <>
-            <main className="productos">
-                <ul>
-                    {productos.map(producto =>(
-                        <li key={producto.id} className="product-card">
-                            <div className="product-image-container">
-                                <NavLink to={"/DetalleProducto/" + producto.id} className="product-image-container">
-                                <img
-                                src={producto.imagenes[0]}
-                                alt={producto.nombre}
-                                className="product-image-card"
-                            />
-                                </NavLink>
-                            </div>
-                            <div className="informacion-producto">
-                                <NavLink to={"/DetalleProducto/" + producto.id} className="product-title-redirect">
-                                <h3>{producto.nombre}</h3>
-                                    </NavLink>
-                                <div className="calificacion">
-                                    <Snitch calificacion={producto.calificacion} />
-                                </div>
-                                <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-                                    <div className="d-flex align-items-center">
-                                        <span className="d-flex align-items-center">
-                                        <IconoPeso/>
-                                        <p style={{ fontSize: "18px", margin:"0" }}>{producto.precio} Galeones</p>
-                                        </span>
-                                    </div>
-                                </Stack>
-
-                                {getCantidadProducto(producto.id)===0?(<button onClick={()=> aumentarCantidadProducto(producto.id)}>Añadir al carrito</button>):(<button onClick={()=>removerProducto(producto.id)} style={{backgroundColor:"#F3532F"}}>Remover</button>)}
-
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </main>
+            {productos.map(producto => (
+                <Card border="dark" style={{ width: '18rem',cursor:"pointer",borderRadius: "20px"}} key={producto.id}>
+                    <Card.Img variant="top" src={producto.imagenes[0]} style={{aspectRatio:"1/1",objectFit:"cover",marginTop:"0.5rem"}} onClick={()=>window.location.href="/DetalleProducto/" + producto.id}/>
+                    <Card.Body style={{height:"50%"}} onClick={()=>window.location.href="/DetalleProducto/" + producto.id}>
+                        <Card.Title>{producto.nombre}</Card.Title>
+                    </Card.Body>
+                    <Card.Body>
+                    <Card.Text >
+                            <Snitch calificacion={producto.calificacion}></Snitch>
+                        </Card.Text>
+                        <Card.Text style={{display:"flex",alignItems:"center"}}><IconoPeso></IconoPeso>{producto.precio} Galeones</Card.Text>
+                    </Card.Body>
+                    <Card.Footer style={{borderTop:"none"}}>{getCantidadProducto(producto.id)===0?
+                    (<Button style={{width:"100%", backgroundColor:"#038bbb",border:"none"}} onClick={()=> aumentarCantidadProducto(producto.id)}>Añadir al carrito</Button>):
+                    (<Button variant="danger" style={{width:"100%",backgroundColor:"#F3532F"}} onClick={()=>removerProducto(producto.id)}>Remover del carrito</Button>)}
+                    </Card.Footer>
+                </Card>
+            ))}
         </>
-    )
-}
+    );
+};

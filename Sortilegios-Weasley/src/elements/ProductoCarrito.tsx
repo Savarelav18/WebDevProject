@@ -18,7 +18,7 @@ export const ProductoCarrito: React.FC<ProductoCarritoProps> = ({ id,cantidad })
   if (item == null) return null
   return (
     <Stack direction="horizontal" gap={2} className="d-flex align-items-center">
-      <img src={item.imagenes[0]} style={{width:"125px", height:"75px", objectFit:"cover"}} alt="" />
+      <img className="me-auto" src={item.imagenes[0]} style={{width:"125px", height:"75px", objectFit:"cover"}} alt="" />
       <div className="me-auto">
         <div>
           {item.nombre}{" "}

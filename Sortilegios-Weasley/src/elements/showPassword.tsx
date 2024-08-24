@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { IconoLunaColor, IconoLunaSinColor } from '../components/icons';
 
 function PasswordInput({ password, setPassword }) {
     const [showPassword, setShowPassword] = useState(false);
@@ -23,13 +24,9 @@ function PasswordInput({ password, setPassword }) {
                 onClick={() => setShowPassword(!showPassword)}
             >
                 {showPassword ? (
-                    <img
-                    src="https://img.icons8.com/?size=100&id=QSC3iqKO2qjl&format=png&color=000000"
-                        style={{ width: '100px', height: '110px', clipPath: 'inset(29% 10% 38% 10%)'}}/>
+                    <IconoLunaColor/>
                 ) : (
-                    <img
-                        src="https://img.icons8.com/?size=100&id=bitbKU8IIiQp&format=png&color=000000"
-                        style={{ width: '100px', height: '110px', clipPath: 'inset(29% 10% 38% 10%)' }}/>
+                    <IconoLunaSinColor/>
                 )}
             </div>
         </div>

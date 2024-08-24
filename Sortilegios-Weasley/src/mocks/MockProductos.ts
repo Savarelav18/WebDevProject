@@ -3,22 +3,21 @@ import { Producto } from "../types.ts";
 export const mockProductos: Producto[] = [ 
     {
         id: 1,
-        nombre: "Amortentia",
-        descripcion: "Es la poción de amor más poderosa que existe. Su aroma varía según las cosas que más atraigan a la persona que la huele.",
-        creador: "Desconocido",
-        advertencia: "No se debe beber, ya que es una poción de amor extremadamente poderosa.",
+        nombre: "Los Huevos Irrompibles de Eduardo",
+        descripcion: "Los Huevos Irrompibles de Eduardo eran un producto de trucos mágicos de la línea Magia Muggle de Sortilegios Weasley. El truco consistía en huevos que no podían romperse.",
+        creador: "Fred y George Weasley",
+        advertencia: "No se debe usar para cocinar.",
         duracion: "Desconocida",
         precio: 100,
         cantidad: 10,
-        categoria: "pociones",
+        categoria: "Bromas",
         divisa: "galeones",
         calificacion: 4,
         imagenes: [
-            "https://i.etsystatic.com/31749383/c/2608/2073/89/445/il/81427f/5340282818/il_680x540.5340282818_ot9e.jpg",
-            "https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1686937265/content-items/013/868/231/Amortentia-original.png?1686937265",
-            "https://media.es.wired.com/photos/650b2a2e72d73ca3bd5ef0cc/16:9/w_2240,c_limit/Business-OpenAI-Dall-E-3-heart.jpg",
-            "https://marketing4ecommerce.net/wp-content/uploads/2024/02/ias-generadoras-de-imagenes.jpg",
-            "https://www.educima.com/imagen-cantar-dl15040.jpg"],
+            "..//src/assets//EduardosUnbreakableEggs.jpeg",
+            "..//src/assets//EduardosUnbreakableEggs2.jpeg",
+            "..//src/assets//EduardosUnbreakableEggs3.jpeg",
+            "..//src/assets//EduardosUnbreakableEggs4.jpeg"],
         comentarios: [
             {
                 id: 1,

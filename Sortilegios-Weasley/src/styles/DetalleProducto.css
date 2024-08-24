@@ -27,8 +27,8 @@
 .mini-imgs-container {
   width: 80%;
   display: flex;
-  overflow: scroll;
   justify-content: space-between;
+  object-fit: cover;
 }
 .mini-imgs {
   width: 20%;
@@ -39,8 +39,8 @@
   width: 60%;
 }
 .container-description h2 {
-  font-weight: 500;
-  font-size: 3em;
+  font-weight: bold;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .tittle-back {
@@ -61,15 +61,12 @@
 .tittle-back .volver:hover {
   opacity: 50%;
 }
-.container-description .calificacion {
-  display: flex;
-  width: 40%;
-}
+
 .container-description .calificacion h3 {
   margin-right: 6%;
 }
 .different-lines {
-  margin: 1em 0;
+  margin-top: 1em 0;
 }
 .calificacion {
   margin-bottom: 2em;
@@ -105,12 +102,12 @@
   opacity: 0.5;
 }
 .two-buttons {
-  width: 40%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 }
 .deja-comentario {
-  margin: 1em 0;
+  margin-top: 1em 0;
 }
 .area-comentario {
   width: 100%;
@@ -121,7 +118,7 @@
   width: 10%;
   display: flex;
   justify-content: space-between;
-  margin: 1em 0;
+  margin-bottom: 1em;
 }
 .der {
   margin-left: 94%;
@@ -130,7 +127,11 @@
   margin: 1em 0;
 }
 .comentario {
-  width: 60%;
+  width: 100%;
+  border: 1px solid;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
 }
 .calif-fecha {
   display: flex;
@@ -140,4 +141,13 @@
 }
 .calif-fecha p {
   padding: 6px;
+}
+
+
+@media (max-width: 850px) {
+  #two-buttons button {
+    margin: 0.5rem 0;
+  }
+
+
 }

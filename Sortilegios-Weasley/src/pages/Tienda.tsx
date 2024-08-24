@@ -61,8 +61,10 @@ export const Tienda= () => {
                   />
                   <Button variant="success">Search</Button>
                 </Form>
-                <Container>
-            <Producto productos={productosfiltrados}/>
+                <Container style={{marginTop:"2rem"}}>
+                    <Row style={{gap:"2rem", display:"flex",justifyContent:"center"}}>
+                    <Producto productos={productosfiltrados}/>
+                    </Row>
                 </Container>
                 </Col>
             </Row>

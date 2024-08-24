@@ -63,3 +63,62 @@ Nav{
     transition: border-color 0.2s;
     width: 400px;
 }
+
+
+#navbar-toggle{
+    display: none;
+}
+
+#botonMenu{
+    display: none;
+}
+
+#ContentMenu a {
+    margin: 1.5rem 2rem;
+}
+
+#ImagenMenu{
+    display: flex;
+    aspect-ratio: 1.7 / 1.2;
+    justify-content: center;
+}
+
+
+
+
+
+@media (max-width: 770px) {
+    #navbar-menu{
+        display: none;
+    }
+
+    #navbar-toggle{
+        display: flex;
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    #botonMenu{
+        display: flex;
+        background-color: transparent;
+        border: none;
+        
+    }
+
+    #ContentMenu a {
+        display: flex;
+        justify-content: center;
+        font-size: 1.5rem;
+        
+        
+    }
+
+    #ContentMenu a:hover {
+        background-color: #dfb375;
+        border-radius: 10px 10px 10px 10px;
+        transition: all 0.4s ease-in-out;
+        
+
+    }
+
+}
