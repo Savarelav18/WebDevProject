@@ -4,8 +4,9 @@ import { Button } from "../../elements/Button.tsx";
 import { Snitch } from "../../elements/Snitch.tsx";
 import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivisas.ts";
 import { useNavigate } from "react-router-dom";
-import { Cantidad } from "../../elements/cantidadProducto.tsx";
 import { Campo } from "../../elements/DetalleProducto/Campo.tsx";
+import { useCarritoCompras } from "../../context/carrito.tsx";
+import { Button as ButtonRB, Container } from "react-bootstrap";
 
 interface DescripcionProps {
     producto: Producto;
@@ -24,7 +25,9 @@ export function Descripcion({ producto }: DescripcionProps) {
         setTimeout(() => {
             setEfectoVisible(false);
         }, 5000);
+
     }
+    const {getCantidadProducto,aumentarCantidadProducto,removerProducto} = useCarritoCompras()
     return (
         <div className="container-description">
             <div className="tittle-back">
@@ -40,6 +43,12 @@ export function Descripcion({ producto }: DescripcionProps) {
             <Campo tittle="Advertencia:">{producto?.advertencia}</Campo>
             <Campo tittle="Duración:">{producto?.duracion}</Campo>
             <Campo tittle="Precio:">{`${producto?.precio} ${producto?.divisa}   /   ${COPFormmater(magicDivisesToMuggle(producto!.divisa, producto!.precio)!)} COP`}</Campo>
+            <Container id="two-buttons">
+                {getCantidadProducto(producto.id)===0?
+                (<ButtonRB variant="none" onClick={()=> aumentarCantidadProducto(producto.id)} style={{backgroundColor:"#e19f41",color:"white",marginRight:"0.7rem"}}>Añadir al carrito</ButtonRB>):
+                (<ButtonRB variant="danger" style={{backgroundColor:"#F3532F",marginRight:"0.7rem"}} onClick={()=>removerProducto(producto.id)}>Remover del carrito</ButtonRB>)}
+                <ButtonRB variant="none" style={{backgroundColor:"#038bbb",color:"white"}}>Ver Efecto</ButtonRB>
+            </Container>
             <h3 className="different-lines">Cantidad: </h3>
             <Cantidad />
             <div className="different-lines two-buttons">

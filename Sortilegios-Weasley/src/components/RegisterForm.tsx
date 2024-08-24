@@ -4,13 +4,14 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PasswordInput from "../elements/showPassword";
 import { useUserForm } from "../elements/variablesGlobales";
+import { usuarios } from "../elements/usuario.json"
 
 export const RegisterForm = () =>{
     const {saveUser, setSaveUser, saveEmail, setSaveEmail, savePswrd, setSavePswrd } = useUserForm();
     const [validate, setValidate] = useState("");
     const [errorMensaje, setErrorMensaje] = useState("");
     const [loading, setLoading] = useState(false);
-    const Navigate = useNavigate();
+    const navigate = useNavigate();
 
 
     const [error, setError] = useState(false);
@@ -35,14 +36,18 @@ export const RegisterForm = () =>{
         }
         setError(false);
         setLoading(true);
-        console.log("Datos guardados:", { saveUser, saveEmail, savePswrd });
-        setErrorMensaje("¡Bienvenido/a a Sortilegios Weasley!")
+
+        // Crear el nuevo usuario
+
+        console.log("Usuarios actualizados:", usuarios);
+
+        setErrorMensaje("¡Bienvenido/a a Sortilegios Weasley!");
 
         setTimeout(() => {
             setLoading(false);
-            Navigate('/Login');
+            navigate('/Login');
         }, 2000);
-    }
+    };
 
     return (<>
     <NavBar/>
@@ -77,7 +82,7 @@ export const RegisterForm = () =>{
                 <label>CONFIRMAR CONTRASEÑA*</label>
                 <PasswordInput password={validate} setPassword={setValidate} />
                 {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)}
-                <button disabled={loading}>{loading ? "Registro exitoso" : "REGISTRARSE"}</button>
+                <button disabled={loading}>{loading ? "Registro exitoso": "REGISTRARSE"}</button>
             
             </form>
         </div>

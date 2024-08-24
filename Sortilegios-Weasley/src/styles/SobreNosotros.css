@@ -24,10 +24,56 @@
   margin: 0rem 1rem;
 }
 
+#sobre-nosotros-contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+}
+
+#gemelos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#gemelos img{
+  max-width: 500px;
+}
+
+@media(max-width:991px)  {
+
+  #gemelos img{
+    max-width: 450px;
+  }
+
+  #sobre-nosotros-contenedor{
+    margin-top: 1rem;
+  }
+}
+
 
 @media(max-width:750px)  {
-    .gemelos{
-      max-width: 00px;
+
+  #gemelos img{
+    max-width: 350px;
+  }
+
+  #sobre-nosotros-contenedor{
+    margin-top: 1rem;
+  }
+}
+
+
+
+@media(max-width:550px)  {
+
+    #gemelos img{
+      max-width: 250px;
+    }
+
+    #sobre-nosotros-contenedor{
+      margin-top: 1rem;
     }
 }
 

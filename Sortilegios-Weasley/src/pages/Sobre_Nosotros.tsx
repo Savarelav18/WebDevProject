@@ -8,12 +8,14 @@ export const Sobre_Nosotros = () =>{
     return(
     <>
     <NavBar/>
-    <Container>
+    <Container id='sobre-nosotros-contenedor'>
         <Row>
-            <Col sm={8}>
-            <Image className="gemelos" src="src/assets/hermanosW.jpg" fluid />;
+            <Col >
+            <Container id='gemelos'>
+            <Image className="gemelos" src="src/assets/About.png"/>;
+            </Container>
             </Col>
-            <Col sm={4}>
+            <Col>
             <div className="contenido" style={{color:"white"}}>
             <h1>Sobre Nosotros</h1>
 
