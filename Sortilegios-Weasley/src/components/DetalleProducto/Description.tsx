@@ -47,14 +47,10 @@ export function Descripcion({ producto }: DescripcionProps) {
                 {getCantidadProducto(producto.id)===0?
                 (<ButtonRB variant="none" onClick={()=> aumentarCantidadProducto(producto.id)} style={{backgroundColor:"#e19f41",color:"white",marginRight:"0.7rem"}}>Añadir al carrito</ButtonRB>):
                 (<ButtonRB variant="danger" style={{backgroundColor:"#F3532F",marginRight:"0.7rem"}} onClick={()=>removerProducto(producto.id)}>Remover del carrito</ButtonRB>)}
-                <ButtonRB variant="none" style={{backgroundColor:"#038bbb",color:"white"}}>Ver Efecto</ButtonRB>
+                <ButtonRB onClick={mostrarEfecto} variant="none" style={{backgroundColor:"#038bbb",color:"white"}}>Ver Efecto</ButtonRB>
             </Container>
-            <h3 className="different-lines">Cantidad: </h3>
-            <Cantidad />
-            <div className="different-lines two-buttons">
-                <Button className="anadir-carrito">Añadir al carrito</Button>
-                <Button className="boton-azul" onClick={mostrarEfecto}>Ver Efecto</Button>
-            </div>
+
+
             {efectoVisible && (
                 <div className={producto?.efectoVisual}>
                     <div className={producto?.efecto}></div>

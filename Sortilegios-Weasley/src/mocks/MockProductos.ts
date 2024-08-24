@@ -13,8 +13,8 @@ export const mockProductos: Producto[] = [
         categoria: "Bromas",
         divisa: "galeones",
         calificacion: 4,
-        efectoVisual: "efecto-visual-sombrero",
-        efecto: "sombrero-antigravedad",
+        efectoVisual: "efecto-visual-huevo",
+        efecto: "huevo",
         imagenes: [
             "..//src/assets//EduardosUnbreakableEggs.jpeg",
             "..//src/assets//EduardosUnbreakableEggs2.jpeg",
@@ -56,10 +56,10 @@ export const mockProductos: Producto[] = [
         categoria: "pociones",
         divisa: "galeones",
         calificacion: 5,
-        efectoVisual: "efecto-visual-huevo",
-        efecto: "huevo",
+        efectoVisual: "efecto-visual-sombrero",
+        efecto: "sombrero-antigravedad",
         imagenes: [
-            "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.05-PM.jpeg",
+            "..//src/assets//Anti_Gravity_Hat.jpeg",
             "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.07-PM.jpeg",
             "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.06-PM-1.jpeg"],
         comentarios: []
