@@ -1,37 +1,45 @@
-
 import { NavBar } from "../components/navBar"
 import { Producto } from "../components/Producto"
-import { Button, Container, Stack, Col,Row } from "react-bootstrap"
+import { Button, Container, Stack, Col, Row } from "react-bootstrap"
 import "../styles/Tienda.css"
 import { DownArrowIcon, HerramientasIcon, JuguetesIcon, PotionIcon, UpArrowIcon } from "../components/icons"
 import { useState } from "react"
 import Form from 'react-bootstrap/Form';
-import {mockProductos} from "../mocks/MockProductos.ts";
+import { mockProductos } from "../mocks/MockProductos.ts";
 
-export const Tienda= () => {
+export const Tienda = () => {
     const productos = mockProductos;
 
-    const [productosTienda,setProductos] = useState(productos)
-    const [productosfiltrados,setProductosFiltrados] = useState(productos)
-    
-    const filtroCateforia = (categoria:string) =>{
-        const filtro = productosTienda.filter(producto=> producto.categoria === categoria)
+    const [productosTienda, setProductos] = useState(productos)
+    const [productosFiltrados, setProductosFiltrados] = useState(productos)
+    const [busqueda, setBusqueda] = useState("")
+
+    const filtroCateforia = (categoria: string) => {
+        const filtro = productosTienda.filter(producto => producto.categoria === categoria)
         setProductosFiltrados(filtro)
     }
 
-    const productosOrdenadosAsc = ()=>{
-        const ordenAsc= [...productosfiltrados].sort((a, b) => a.precio - b.precio)
-        console.log(productosfiltrados)
+    const productosOrdenadosAsc = () => {
+        const ordenAsc = [...productosFiltrados].sort((a, b) => a.precio - b.precio)
+        console.log(productosFiltrados)
         setProductosFiltrados(ordenAsc)
     }
 
-    const productosOrdenadosDesc = ()=>{
-        const ordenDesc= [...productosfiltrados].sort((a, b) => b.precio - a.precio)
-        console.log(productosfiltrados)
+    const productosOrdenadosDesc = () => {
+        const ordenDesc = [...productosFiltrados].sort((a, b) => b.precio - a.precio)
+        console.log(productosFiltrados)
         setProductosFiltrados(ordenDesc)
     }
 
-    return(
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setBusqueda(e.target.value);
+        const productosFiltrados = productosTienda.filter(producto =>
+            producto.nombre.toLowerCase().includes(e.target.value.toLowerCase())
+        );
+        setProductosFiltrados(productosFiltrados);
+    };
+
+    return (
         <>
         <NavBar/>
         <Container style={{color:"white"}}>

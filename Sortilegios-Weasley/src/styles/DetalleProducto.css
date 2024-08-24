@@ -151,3 +151,135 @@
 
 
 }
+.efecto-visual-huevo {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.huevo {
+  width: 50px;
+  height: 70px;
+  background-color: #ffd562; /* Color café */
+  border-radius: 50% 50% 45% 45%;
+  border: 2px solid #8B4513; /* Un borde más oscuro para dar profundidad */
+  position: relative;
+  animation: caer 2s ease-in-out forwards;
+}
+
+@keyframes caer {
+  0% {
+      top: 0;
+      transform: translateY(-100%);
+  }
+  70% {
+      top: 85%;
+      transform: translateY(0);
+  }
+  80% {
+      top: 50%; /* Rebote más alto */
+      transform: translateY(0);
+  }
+  90% {
+      top: 85%;
+      transform: translateY(0);
+  }
+  95% {
+      top: 60%; /* Rebote intermedio */
+      transform: translateY(0);
+  }
+  100% {
+      top: 85%;
+      transform: translateY(0);
+  }
+}
+.efecto-visual-sombrero {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sombrero-antigravedad {
+  width: 100px;
+  height: 60px;
+  background-color: #3e2723; /* Color marrón oscuro para el sombrero */
+  border-radius: 50% 50% 0 0;
+  position: relative;
+  animation: levitar 3s ease-in-out infinite;
+}
+
+@keyframes levitar {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-90px); /* El sombrero sube */
+  }
+  100% {
+      transform: translateY(0); /* El sombrero vuelve a su posición original */
+  }
+}
+
+.efecto-visual-granos {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  background-color: #ffe0bd;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #333;
+}
+
+.granos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, #ff4d4d 20%, transparent 20%),
+                    radial-gradient(circle, #ff4d4d 20%, transparent 20%);
+  background-size: 10px 10px;
+  background-position: 10px 10px, 20px 20px;
+  opacity: 0;
+  animation: granos-appear 2s forwards;
+}
+
+@keyframes granos-appear {
+  0% {
+      opacity: 0;
+      transform: scale(0.5);
+  }
+  50% {
+      opacity: 1;
+      transform: scale(1.1);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}

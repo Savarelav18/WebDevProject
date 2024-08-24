@@ -13,6 +13,8 @@ export const mockProductos: Producto[] = [
         categoria: "Bromas",
         divisa: "galeones",
         calificacion: 4,
+        efectoVisual: "efecto-visual-sombrero",
+        efecto: "sombrero-antigravedad",
         imagenes: [
             "..//src/assets//EduardosUnbreakableEggs.jpeg",
             "..//src/assets//EduardosUnbreakableEggs2.jpeg",
@@ -54,6 +56,8 @@ export const mockProductos: Producto[] = [
         categoria: "pociones",
         divisa: "galeones",
         calificacion: 5,
+        efectoVisual: "efecto-visual-huevo",
+        efecto: "huevo",
         imagenes: [
             "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.05-PM.jpeg",
             "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.07-PM.jpeg",
@@ -72,6 +76,8 @@ export const mockProductos: Producto[] = [
         categoria: "dulces",
         divisa: "sickles",
         calificacion: 3,
+        efectoVisual: "efecto-visual-granos",
+        efecto: "granos",
         imagenes: [
             "https://i.ytimg.com/vi/yIo-KT7BstM/maxresdefault.jpg"
         ],
@@ -89,6 +95,8 @@ export const mockProductos: Producto[] = [
         categoria: "dulces",
         divisa: "sickles",
         calificacion: 4,
+        efectoVisual: "efecto-visual-sombrero",
+        efecto: "sombrero-antigravedad",
         imagenes: ["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.falabella.com.co%2Ffalabella-co%2Fproduct%2F121984350%2FGRAJEAS-DULCE-BERTIE-BOTTS-harry-potter-sabor-desagradable%2F121984353&psig=AOvVaw2DlBi8GL_iO5Fu67657f8w&ust=1721898592845000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiPjaGqv4cDFQAAAAAdAAAAABAR",
             "https://www.google.com/url?sa=i&url=https%3A%2F%2Flamadrigueraqm.mercadoshops.com.mx%2FMLM-709754912-grageas-de-todos-los-sabores-bertie-botts-harry-potter-_JM&psig=AOvVaw2DlBi8GL_iO5Fu67657f8w&ust=1721898592845000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiPjaGqv4cDFQAAAAAdAAAAABBA"
         ],
