@@ -4,11 +4,9 @@ import { useState } from "react";
 import { usuario } from "../elements/variablesGlobales";
 import { useNavigate } from "react-router-dom";
 import PasswordInput from "../elements/showPassword";
-/* import { useUserForm } from "../elements/variablesGlobales"; */
 
 
 export const LoginForm = () =>{
-    /* const {saveUser, savePswrd} = useUserForm(); */
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);

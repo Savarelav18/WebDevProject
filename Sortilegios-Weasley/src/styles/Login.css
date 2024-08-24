@@ -10,30 +10,51 @@
   font-family: 'Cinzel';
 }
 
+.formulario, .imagen {
+  flex: 1; 
+  max-width: 400px; 
+  height: auto; 
+}
+
 .formulario {
-  width: 400px;
-  height: 481px;
+  width: 90%;
+  max-height: 95%;
+  height: auto;
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
   background: #FFFFFF;
   opacity: .7;
 }
 
-.imagen{
+.imagen {
   background-color: #038BBB;
   border-color: black;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
-.imagen img{ width: 360px; height: 475px; }
+.imagen img {
+  max-width: 96%; 
+  height: auto; 
+  width: auto;
+  border-radius: 15px; 
+  object-fit:cover; 
+}
+
+.formulario label{
+  font-size: 2.4vh;
+}
 
 .formulario p{
   margin-top: 0.1rem;
   text-align: center;
   display: inline-block;
   width: 100%;
-  font-size: 15px;
+  font-size: 2vh;
 }
 
 .formulario span a{
@@ -46,12 +67,13 @@
   display: inline-block;
   width: 100%;
   font-family: 'Cinzel-Black';
-  font-size: 19px;
+  font-size: 2vh;
 } 
 
 .formulario h1{
   text-align: center;
-  margin-top: 3.5rem;
+  margin-top: 2rem;
+  font-size: 4vh;
 }
 
 .formulario form {
@@ -59,23 +81,29 @@
   padding: 4px 30px 41px 40px;
   box-sizing: border-box;
   position: relative;
-  font-size: 18px;
+  font-size: 2vh;
 }
-.mensaje p{
-  font-size: 20px;
-  text-decoration: double;
+
+.mensaje {
+  height: 24px; 
+  margin-top: 10px; 
+  text-align: center;
 }
-.error{
+
+.mensaje p {
+  font-size: 2vh;
   color: #821620;
+  margin: 0;
 }
+
 .formulario input {
   position:relative;
   margin: 0.1em 0 1.1em 0;
   width: 100%;
-  padding: 0 7px 0 7px;
+  padding: 0 0.1em 0 0.3em;
   box-sizing: border-box;
   height: 40px;
-  font-size: 18px;
+  font-size: 2vh;
   font-family: 'Berylium', sans-serif;
   transition: 0.3s;
 }
@@ -87,7 +115,7 @@
   background: #038BBB;
   border-color: rgb(58, 58, 58);
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 2.5vh;
   font-family: 'Cinzel';
   color: white;
   cursor: pointer;
