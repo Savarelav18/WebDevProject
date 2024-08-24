@@ -154,8 +154,8 @@
 }
 
 .huevo {
-  width: 50px;
-  height: 70px;
+  width: 90px;
+  height: 130px;
   background-color: #ffd562; /* Color café */
   border-radius: 50% 50% 45% 45%;
   border: 2px solid #8B4513; /* Un borde más oscuro para dar profundidad */
@@ -202,74 +202,146 @@
 }
 
 .sombrero-antigravedad {
-  width: 100px;
-  height: 60px;
-  background-color: #3e2723; /* Color marrón oscuro para el sombrero */
-  border-radius: 50% 50% 0 0;
+  width: 700px;
+  height: 1000px;
+  background-image: url("../src/assets/sombrero.png"); 
+  background-size: cover;
   position: relative;
-  animation: levitar 3s ease-in-out infinite;
+  animation: levitar 4s ease-in-out infinite;
 }
 
 @keyframes levitar {
   0% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-90px); /* El sombrero sube */
+      transform: translateY(200px);
   }
   100% {
-      transform: translateY(0); /* El sombrero vuelve a su posición original */
+      transform: translateY(-500px); /* El sombrero sube */
   }
 }
+  .efecto-visual-granos {
+    width: 300px; /* Ajusta el tamaño de la imagen si es necesario */
+    height: 300px; /* Mantén la proporción correcta */
+    background-image: url('https://blog.skeyndor.com/wp-content/uploads/2015/06/redondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+  }
 
-.efecto-visual-granos {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-}
+  .efecto-visual-granos::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    background-size: 30px 30px; /* Tamaño del grano */
+    background-repeat: no-repeat;
+    background-position: 40% 30%, 55% 60%, 30% 50%, 70% 50%, 50% 0%, 50% 90%, 45% 60%; /* Posiciones de los granos */
+    animation: mostrarGranos 4s infinite; /* Animación para mostrar los granos */
+  }
 
-.avatar {
-  width: 150px;
-  height: 150px;
-  background-color: #ffe0bd;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #333;
-}
-
-.granos {
+  @keyframes mostrarGranos {
+    0%, 20% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    30% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #FFFF 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    50% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    70% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    100% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%);
+    }
+  }
+.lengua {
+  width: 200px; /* Ancho en la parte superior */
+  height: 400px; /* Inicialmente larga */
+  background-color: #ff6666; /* Color rosado para la lengua */
+  border-radius: 100% 50% 45% 45%;
+  border: 2px solid #ff3366; /* Un borde más oscuro para dar profundidad */
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle, #ff4d4d 20%, transparent 20%),
-                    radial-gradient(circle, #ff4d4d 20%, transparent 20%);
-  background-size: 10px 10px;
-  background-position: 10px 10px, 20px 20px;
-  opacity: 0;
-  animation: granos-appear 2s forwards;
+  margin-top: 90px auto;
+  animation: enrollarLengua 3s ease-in-out infinite alternate; /* Subida y bajada continua */
 }
 
-@keyframes granos-appear {
+@keyframes enrollarLengua {
   0% {
-      opacity: 0;
-      transform: scale(0.5);
+    height: 300px; /* Altura inicial larga */
+    width: 80px; /* Más angosta en la parte inferior */
+    transform: translate (0); /* Posición inicial más arriba */
+  }
+  25% {
+    transform: translateY(-50px); /* Sube un poco */
   }
   50% {
-      opacity: 1;
-      transform: scale(1.1);
+    height: 200px; /* Se acorta mientras se enrolla */
+    width: 120px; /* Se ensancha un poco mientras sube */
+    transform: translateY(0); /* Baja nuevamente */
+  }
+  75% {
+    transform: translateY(-50px); /* Sube nuevamente */
   }
   100% {
-      opacity: 1;
-      transform: scale(1);
+    height: 60px; /* Se convierte en un rollito más compacto */
+    width: 150px; /* Ancho en la parte superior */
+    transform: translateY(-140px); /* Completa el giro en espiral y sube */
   }
+}
+
+.lengua::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #ff6f61;
+  border-radius: 50%;
+  transform: translateX(-50%);
 }

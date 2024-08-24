@@ -3,10 +3,10 @@ import { Producto } from "../types.ts";
 export const mockProductos: Producto[] = [ 
     {
         id: 1,
-        nombre: "Amortentia",
-        descripcion: "Es la poción de amor más poderosa que existe. Su aroma varía según las cosas que más atraigan a la persona que la huele.",
-        creador: "Desconocido",
-        advertencia: "No se debe beber, ya que es una poción de amor extremadamente poderosa.",
+        nombre: "Sombrero Antigravedad",
+        descripcion: "Arruina el día de un caballero haciendo que su sombrero vuele por los aires.",
+        creador: "Fred and George Weasley",
+        advertencia: "Si te da pena mostrar tus entradas prominentes, no lo uses.",
         duracion: "Desconocida",
         precio: 100,
         cantidad: 10,
@@ -16,11 +16,7 @@ export const mockProductos: Producto[] = [
         efectoVisual: "efecto-visual-sombrero",
         efecto: "sombrero-antigravedad",
         imagenes: [
-            "https://i.etsystatic.com/31749383/c/2608/2073/89/445/il/81427f/5340282818/il_680x540.5340282818_ot9e.jpg",
-            "https://cdn.domestika.org/c_fill,dpr_auto,f_auto,q_auto/v1686937265/content-items/013/868/231/Amortentia-original.png?1686937265",
-            "https://media.es.wired.com/photos/650b2a2e72d73ca3bd5ef0cc/16:9/w_2240,c_limit/Business-OpenAI-Dall-E-3-heart.jpg",
-            "https://marketing4ecommerce.net/wp-content/uploads/2024/02/ias-generadoras-de-imagenes.jpg",
-            "https://www.educima.com/imagen-cantar-dl15040.jpg"],
+            "https://static.wikia.nocookie.net/harrypotter/images/0/03/Anti_Gravity_Hat.gif"],
         comentarios: [
             {
                 id: 1,
@@ -60,9 +56,7 @@ export const mockProductos: Producto[] = [
         efectoVisual: "efecto-visual-huevo",
         efecto: "huevo",
         imagenes: [
-            "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.05-PM.jpeg",
-            "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.07-PM.jpeg",
-            "https://merlinsbeard.shop/wp-content/uploads/2022/05/WhatsApp-Image-2022-05-14-at-1.55.06-PM-1.jpeg"],
+            "https://static.wikia.nocookie.net/harrypotter/images/7/7a/EduardosUnbreakableEggs.jpg"],
         comentarios: []
     },
     {
@@ -86,20 +80,19 @@ export const mockProductos: Producto[] = [
     },
     {
         id: 4,
-        nombre: "Bertie Botts de todos los sabores",
-        descripcion: "Son caramelos de gelatina que tienen sabores normales y sabores desagradables.",
+        nombre: "Lengua de serpiente",
+        descripcion: "Son caramelos que te alargan la lengua.",
         creador: "Bertie Bott",
-        advertencia: "No se debe comer en grandes cantidades, ya que puede causar malestar estomacal.",
-        duracion: "Desconocida",
+        advertencia: "Sino quieres que se arrastre tu lengua por el piso, no comas más de 1.",
+        duracion: "1 minuto",
         precio: 10,
         cantidad: 200,
         categoria: "dulces",
         divisa: "sickles",
         calificacion: 4,
-        efectoVisual: "efecto-visual-sombrero",
-        efecto: "sombrero-antigravedad",
-        imagenes: ["https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.falabella.com.co%2Ffalabella-co%2Fproduct%2F121984350%2FGRAJEAS-DULCE-BERTIE-BOTTS-harry-potter-sabor-desagradable%2F121984353&psig=AOvVaw2DlBi8GL_iO5Fu67657f8w&ust=1721898592845000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiPjaGqv4cDFQAAAAAdAAAAABAR",
-            "https://www.google.com/url?sa=i&url=https%3A%2F%2Flamadrigueraqm.mercadoshops.com.mx%2FMLM-709754912-grageas-de-todos-los-sabores-bertie-botts-harry-potter-_JM&psig=AOvVaw2DlBi8GL_iO5Fu67657f8w&ust=1721898592845000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMiPjaGqv4cDFQAAAAAdAAAAABBA"
+        efectoVisual: "",
+        efecto: "lengua",
+        imagenes: ["https://image.lexica.art/full_webp/2757f017-5ae4-47a5-8e2e-a0aaf28c33fc"
         ],
         comentarios: []
     }
