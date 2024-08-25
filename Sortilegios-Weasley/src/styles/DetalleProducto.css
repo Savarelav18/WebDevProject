@@ -164,11 +164,11 @@
 }
 
 .huevo {
-  width: 50px;
-  height: 70px;
-  background-color: #ffd562; /* Color café */
+  width: 90px;
+  height: 130px;
+  background-color: #edbb99; 
   border-radius: 50% 50% 45% 45%;
-  border: 2px solid #8B4513; /* Un borde más oscuro para dar profundidad */
+  border: 2px solid #f6ddcc;
   position: relative;
   animation: caer 2s ease-in-out forwards;
 }
@@ -183,7 +183,7 @@
       transform: translateY(0);
   }
   80% {
-      top: 50%; /* Rebote más alto */
+      top: 50%; 
       transform: translateY(0);
   }
   90% {
@@ -191,7 +191,7 @@
       transform: translateY(0);
   }
   95% {
-      top: 60%; /* Rebote intermedio */
+      top: 60%;
       transform: translateY(0);
   }
   100% {
@@ -212,74 +212,188 @@
 }
 
 .sombrero-antigravedad {
-  width: 100px;
-  height: 60px;
-  background-color: #3e2723; /* Color marrón oscuro para el sombrero */
-  border-radius: 50% 50% 0 0;
+  width: 700px;
+  height: 1000px;
+  background-image: url("../src/assets/sombrero.png"); 
+  background-size: cover;
   position: relative;
-  animation: levitar 3s ease-in-out infinite;
+  animation: levitar 4s ease-in-out infinite;
 }
 
 @keyframes levitar {
   0% {
-      transform: translateY(0);
-  }
-  50% {
-      transform: translateY(-90px); /* El sombrero sube */
+      transform: translateY(200px);
   }
   100% {
-      transform: translateY(0); /* El sombrero vuelve a su posición original */
+      transform: translateY(-500px); 
   }
 }
+  .efecto-visual-granos {
+    width: 300px; 
+    height: 300px; 
+    background-image: url('../src/assets/Filch.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: 50%;
+  }
 
-.efecto-visual-granos {
-  position: fixed;
+  .efecto-visual-granos::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+      radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    background-size: 15px 15px; 
+    background-repeat: no-repeat;
+    background-position: 55% 40%, 70% 55%, 70% 45%, 60% 25%, 70% 20%, 55% 55%, 65% 40%; 
+    animation: mostrarGranos 6s infinite; 
+  }
+
+  @keyframes mostrarGranos {
+    0%, 20% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    30% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #FFFF 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    50% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    70% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
+    }
+    100% {
+      background-image: 
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%);
+    }
+  }
+  .boca {
+    width: 280px; 
+    height: 350px; 
+    background-image: url("../src/assets/boca.png");
+    background-size: cover;
+    position: absolute; 
+    top: 20%;
+  }
+  
+  .lengua {
+    width: 250px; 
+    height: 60px; 
+    background-color: #C62828; 
+    border-radius: 100% 50% 45% 45%;
+    border: 2px solid #B71C1C; 
+    position: absolute;
+    top: 50%; 
+    left: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: enrollarLengua 3s ease-in-out forwards; 
+  }
+  
+  @keyframes enrollarLengua {
+    0% {
+      height: 60px; 
+      width: 200px; 
+      transform: translateX(-50%) translateY(-40%); 
+    }
+    100% {
+      height: 600px;
+      width: 200px; 
+      transform: translateX(-50%) translateY(0px); 
+    }
+  }
+   
+  @keyframes firework {
+    0% { 
+      transform: translate(-50%, 60vh);
+      width: 0.5vmin;
+      opacity: 1;
+    }
+    50% { 
+      width: 0.5vmin;
+      opacity: 1;
+    }
+    100% { 
+      width: 45vmin; 
+      opacity: 0; 
+    }
+  }
+  
+  .firework,
+.firework::before,
+.firework::after {
+  --top: 60vh;
+  content: "";
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 1000;
+  width: 0.5vmin;
+  aspect-ratio: 6;
+  background:
+    radial-gradient(circle, #B71C1C 1.6vmin, #0000 0) 20% 10%,
+    radial-gradient(circle, #0000ff 2.4vmin, #0000 0) 10% 80%,
+    radial-gradient(circle, #B71C1C 4vmin, #0000 0) 80% 30%,
+    radial-gradient(circle, #0000ff 1.6vmin, #0000 0) 60% 70%,
+    radial-gradient(circle, #ff0 2.4vmin, #0000 0) 30% 90%,
+    radial-gradient(circle, #B71C1C 4vmin, #0000 0) 75% 50%,
+    radial-gradient(circle, #ff0 4vmin, #0000 0) 90% 10%,
+    radial-gradient(circle, #0000ff 1.6vmin, #0000 0) 40% 60%,
+    radial-gradient(circle, #B71C1C 2.4vmin, #0000 0) 10% 20%,
+    radial-gradient(circle, #ff0 1.6vmin, #0000 0) 70% 90%,
+    radial-gradient(circle, #0000ff 2.4vmin, #0000 0) 20% 40%,
+    radial-gradient(circle, #ff0 4vmin, #0000 0) 50% 15%;
+  background-size: 1vmin 1vmin; 
+  background-repeat: no-repeat;
+  animation: firework 5s infinite;
 }
 
-.avatar {
-  width: 150px;
-  height: 150px;
-  background-color: #ffe0bd;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #333;
+.firework::before {
+  transform: translate(-50%, -50%) rotate(65deg) !important; 
 }
 
-.granos {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(circle, #ff4d4d 20%, transparent 20%),
-                    radial-gradient(circle, #ff4d4d 20%, transparent 20%);
-  background-size: 10px 10px;
-  background-position: 10px 10px, 20px 20px;
-  opacity: 0;
-  animation: granos-appear 2s forwards;
-}
-
-@keyframes granos-appear {
-  0% {
-      opacity: 0;
-      transform: scale(0.5);
-  }
-  50% {
-      opacity: 1;
-      transform: scale(1.1);
-  }
-  100% {
-      opacity: 1;
-      transform: scale(1);
-  }
+.firework::after {
+  transform: translate(-50%, -50%) rotate(-180deg) !important;
 }
