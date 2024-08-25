@@ -1,4 +1,4 @@
-import { NavLink, useNavigate} from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { usuario } from "../elements/variablesGlobales";
 import { CarritoIcono, IconoMenu, IconoUsuarioLogin, IconoLogout, IconoUser } from "./icons"
 import { Button, Container,FormLabel,Nav, Navbar, Offcanvas} from "react-bootstrap"
@@ -6,20 +6,20 @@ import "../styles/navBar.css"
 import { useCarritoCompras } from "../context/carrito"
 import { useState } from "react";
 
-export const NavBar= ()=>{
-    const Navigate = useNavigate();
-    const login = window.localStorage.getItem("isLogedIn");
+export const NavBar = () => {
+  const Navigate = useNavigate();
+  const login = window.localStorage.getItem("isLogedIn");
 
-    const logOut = () => {
-        window.localStorage.removeItem("isLogedIn")
-        Navigate('/Login');
-    }
+  const logOut = () => {
+    window.localStorage.removeItem("isLogedIn")
+    Navigate('/Login');
+  }
 
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    
+
 
 
     const {abrirCarrito,cantidadCarrito} = useCarritoCompras()
