@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PasswordInput from "../elements/showPassword";
 import { useUserForm } from "../elements/variablesGlobales";
-import { usuarios } from "../elements/usuario.json"
+import { usuarios } from "../elements/usuarios.json"
 
 export const RegisterForm = () =>{
     const {saveUser, setSaveUser, saveEmail, setSaveEmail, savePswrd, setSavePswrd } = useUserForm();
@@ -24,16 +24,17 @@ export const RegisterForm = () =>{
             setErrorMensaje("Todos los campos son obligatorios")
             return;
         } 
+        else if (savePswrd != validate){
+            setError(true);
+            setErrorMensaje("No coinciden las contraseñas")
+            return;
+        }
         else if(savePswrd.length < 8 ){
             setError(true);
             setErrorMensaje("La contraseña debe tener al menos 8 carácteres")
             return;
         }
-        else if (savePswrd != validate){
-            setError(true);
-            setErrorMensaje("No coinciden ambos campos de contraseña")
-            return;
-        }
+        
         setError(false);
         setLoading(true);
 
@@ -81,7 +82,8 @@ export const RegisterForm = () =>{
                 <PasswordInput password={savePswrd} setPassword={setSavePswrd} />
                 <label>CONFIRMAR CONTRASEÑA*</label>
                 <PasswordInput password={validate} setPassword={setValidate} />
-                {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)}
+                <div className="message">
+                {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)}</div>
                 <button disabled={loading}>{loading ? "Registro exitoso": "REGISTRARSE"}</button>
             
             </form>
