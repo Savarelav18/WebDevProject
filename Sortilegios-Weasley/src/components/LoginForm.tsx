@@ -53,7 +53,7 @@ export const LoginForm = () =>{
 
     <NavBar/>
     <link rel="stylesheet" href="../styles/Login.css"></link>
-    <div className="cont">
+    <div className="content">
         <div className="formulario"  >
             <h1>INICIA SESIÓN</h1>
             <p>¿Aún no tienes cuenta?</p> 
