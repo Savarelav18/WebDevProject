@@ -15,7 +15,7 @@ export const Producto: React.FC<ProductosProp> = ({ productos }) => {
     return (
         <>
             {productos.map(producto => (
-                <Card border="dark" style={{ width: '18rem',cursor:"pointer",borderRadius: "20px"}} key={producto.id}>
+                <Card border="dark" style={{ width: '18rem',cursor:"pointer",borderRadius: "20px"}} key={producto.id} id="product-card">
                     <Card.Img variant="top" src={producto.imagenes[0]} style={{aspectRatio:"1/1",objectFit:"cover",marginTop:"0.5rem"}} onClick={()=>window.location.href="/DetalleProducto/" + producto.id}/>
                     <Card.Body style={{height:"50%"}} onClick={()=>window.location.href="/DetalleProducto/" + producto.id}>
                         <Card.Title>{producto.nombre}</Card.Title>

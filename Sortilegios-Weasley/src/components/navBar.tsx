@@ -27,6 +27,15 @@ export const NavBar= ()=>{
         <>
           <Navbar className="shadow-sm mb-3 sticky-top" style={{backgroundColor:"#E19F41"}}>
             <Container>
+              <Navbar.Brand href="/">
+                <img
+                  alt=""
+                  src="../src/assets/logonavbar.png"
+                  width="75"
+                  height="75"
+                  className="d-inline-block align-center"
+                />{' '}
+            </Navbar.Brand>
               <Nav className="me-auto" id="navbar-menu">
                 <Nav.Link to="/" as={NavLink} style={{margin:"0 1.5rem"}}>Inicio</Nav.Link>
                 <Nav.Link to="/Tienda" as={NavLink} style={{margin:"0 1.5rem"}}>Tienda</Nav.Link>
