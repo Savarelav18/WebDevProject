@@ -20,6 +20,7 @@ type CarritoComprasContexto = {
     aumentarCantidadProducto:(id:number)=> void
     disminuirCantidadProducto:(id:number)=> void
     removerProducto:(id:number)=> void
+    vaciarCarrito:()=> void
     cantidadCarrito:number
     productosCarrito:ItemCarrito[]
 
@@ -80,12 +81,17 @@ export function CarritoComprasProvider({children}:CarritoComprasProviderProps){
         })
     }
 
+    function vaciarCarrito(){
+            return setItemsCarrito([])
+    }
+
     return <ContextoCarrito.Provider 
     value={{
         getCantidadProducto,
         aumentarCantidadProducto,
         disminuirCantidadProducto,
         removerProducto,
+        vaciarCarrito,
         productosCarrito:itemsCarrito,
         abrirCarrito,
         cerrarCarrito,

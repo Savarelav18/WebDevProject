@@ -97,7 +97,7 @@ export const mockProductos: Producto[] = [
         cantidad: 200,
         categoria: "Dulces",
         divisa: "sickles",
-        calificacion: 4,
+        calificacion: 0,
         efectoVisual: "boca",
         efecto: "lengua",
         imagenes: ["..//src/assets//Lengua.jpg",

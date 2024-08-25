@@ -6,12 +6,15 @@ import { useLocation } from "react-router-dom";
 import "../styles/Pago.css";
 
 import imag from "../assets/pagos/selloDorado.png";
+import { useCarritoCompras } from "../context/carrito.tsx";
+
 export function Pago() {
     const location = useLocation();
     const [card, setCard] = useState("");
     const [vencimiento, setVencimiento] = useState("");
     const [security, setSecurity] = useState("");
     const [postal, setPostal] = useState("");
+    const {vaciarCarrito}= useCarritoCompras()
 
     const navigate = useNavigate();
 
@@ -24,6 +27,7 @@ export function Pago() {
         }
     }
     function handlePago() {
+        vaciarCarrito()
         navigate("/DetalleCompra", {
             state: location.state,
         });

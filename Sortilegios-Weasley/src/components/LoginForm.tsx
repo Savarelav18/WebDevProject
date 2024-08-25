@@ -9,7 +9,6 @@ import { Button } from "react-bootstrap";
 
 
 export const LoginForm = () =>{
-    /* const {saveUser, savePswrd} = useUserForm(); */
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
@@ -56,7 +55,7 @@ export const LoginForm = () =>{
 
     <NavBar/>
     <link rel="stylesheet" href="../styles/Login.css"></link>
-    <div className="cont">
+    <div className="content">
         <div className="formulario"  >
             <h1>INICIA SESIÓN</h1>
             <p>¿Aún no tienes cuenta?</p> 

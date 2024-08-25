@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import { IconoLunaColor, IconoLunaSinColor } from '../components/icons';
 
-function PasswordInput({ password, setPassword }) {
+interface PasswordInputProps {
+    password: string;
+    setPassword: (value: string) => void;
+}
+
+function PasswordInput({ password, setPassword }: PasswordInputProps) {
     const [showPassword, setShowPassword] = useState(false);
 
     return (
