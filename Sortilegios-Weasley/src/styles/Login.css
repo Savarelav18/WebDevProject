@@ -26,7 +26,7 @@
   border-bottom-right-radius: 30px;
 }
 
-.imagen img{ width: 360px; height: 475px; }
+.imagen img{ width: 360px;}
 
 .formulario p{
   margin-top: 0.1rem;
@@ -62,7 +62,7 @@
   font-size: 18px;
 }
 .mensaje p{
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: double;
 }
 .error{
@@ -79,7 +79,13 @@
   font-family: 'Berylium', sans-serif;
   transition: 0.3s;
 }
-
+input[type="password"]::-ms-reveal,
+input[type="password"]::-ms-clear,
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-inner-spin-button,
+input[type="password"]::-webkit-textfield-decoration-container {
+    display: none;
+}
 .formulario button{
   width: 100%;
   height: 47px;
@@ -92,7 +98,6 @@
   color: white;
   cursor: pointer;
   outline: none;
-  margin-top: 10%;
   display: inline-block;
   transition-duration: .3s;
   transition-property: transform;
@@ -102,7 +107,7 @@
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
 
   &:hover {
-    transform: scale(.9);
+    transform: scale(.97);
   }
 
 }

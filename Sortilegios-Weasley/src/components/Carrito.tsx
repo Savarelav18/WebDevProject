@@ -11,6 +11,7 @@ type CarritoProps={
 
 export function Carrito ({abierto}:CarritoProps){
   const {cerrarCarrito,productosCarrito} = useCarritoCompras()
+  const login = window.localStorage.getItem("isLogedIn");
   return <Offcanvas show={abierto} onHide={cerrarCarrito} placement="end">
     <Offcanvas.Header closeButton>
       <img src="./src/assets/WizzardWheezesLogo.jpg" alt="logo" style={{objectFit:"cover", maxHeight:"100px",marginRight:"15px"}}/>
@@ -30,8 +31,17 @@ export function Carrito ({abierto}:CarritoProps){
             } Galeones
       </div>
       <div>
-
-        <Button className="w-100" style={{backgroundColor:"#0C2D4D"}} onClick={() => window.location.href="/DetallePedido"}>Pagar</Button>
+        <Button className="w-100" style={{backgroundColor:"#0C2D4D"}} 
+        onClick={() => {
+          if (login !== null) {
+              window.location.href = "/DetallePedido";
+          } else {
+              alert("Debe estar logueado para continuar.");
+              window.location.href = "/Login";
+          }
+      }}>
+          Pagar
+        </Button>
       </div>
       </Stack>
     </Offcanvas.Body>

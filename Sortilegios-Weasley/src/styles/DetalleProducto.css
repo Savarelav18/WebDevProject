@@ -27,8 +27,8 @@
 .mini-imgs-container {
   width: 80%;
   display: flex;
-  overflow: scroll;
   justify-content: space-between;
+  object-fit: cover;
 }
 .mini-imgs {
   width: 20%;
@@ -39,8 +39,8 @@
   width: 60%;
 }
 .container-description h2 {
-  font-weight: 500;
-  font-size: 3em;
+  font-weight: bold;
+  font-size: 2em;
   margin-bottom: 1em;
 }
 .tittle-back {
@@ -61,15 +61,12 @@
 .tittle-back .volver:hover {
   opacity: 50%;
 }
-.container-description .calificacion {
-  display: flex;
-  width: 40%;
-}
+
 .container-description .calificacion h3 {
   margin-right: 6%;
 }
 .different-lines {
-  margin: 1em 0;
+  margin-top: 1em 0;
 }
 .calificacion {
   margin-bottom: 2em;
@@ -105,12 +102,12 @@
   opacity: 0.5;
 }
 .two-buttons {
-  width: 40%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 }
 .deja-comentario {
-  margin: 1em 0;
+  margin-top: 1em 0;
 }
 .area-comentario {
   width: 100%;
@@ -121,7 +118,7 @@
   width: 10%;
   display: flex;
   justify-content: space-between;
-  margin: 1em 0;
+  margin-bottom: 1em;
 }
 .der {
   margin-left: 94%;
@@ -130,7 +127,11 @@
   margin: 1em 0;
 }
 .comentario {
-  width: 60%;
+  width: 100%;
+  border: 1px solid;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 5px;
 }
 .calif-fecha {
   display: flex;
@@ -140,6 +141,15 @@
 }
 .calif-fecha p {
   padding: 6px;
+}
+
+
+@media (max-width: 850px) {
+  #two-buttons button {
+    margin: 0.5rem 0;
+  }
+
+
 }
 .efecto-visual-huevo {
   position: fixed;
@@ -156,9 +166,9 @@
 .huevo {
   width: 90px;
   height: 130px;
-  background-color: #ffd562; /* Color café */
+  background-color: #edbb99; 
   border-radius: 50% 50% 45% 45%;
-  border: 2px solid #8B4513; /* Un borde más oscuro para dar profundidad */
+  border: 2px solid #f6ddcc;
   position: relative;
   animation: caer 2s ease-in-out forwards;
 }
@@ -173,7 +183,7 @@
       transform: translateY(0);
   }
   80% {
-      top: 50%; /* Rebote más alto */
+      top: 50%; 
       transform: translateY(0);
   }
   90% {
@@ -181,7 +191,7 @@
       transform: translateY(0);
   }
   95% {
-      top: 60%; /* Rebote intermedio */
+      top: 60%;
       transform: translateY(0);
   }
   100% {
@@ -215,17 +225,17 @@
       transform: translateY(200px);
   }
   100% {
-      transform: translateY(-500px); /* El sombrero sube */
+      transform: translateY(-500px); 
   }
 }
   .efecto-visual-granos {
-    width: 300px; /* Ajusta el tamaño de la imagen si es necesario */
-    height: 300px; /* Mantén la proporción correcta */
-    background-image: url('https://blog.skeyndor.com/wp-content/uploads/2015/06/redondo.png');
+    width: 300px; 
+    height: 300px; 
+    background-image: url('../src/assets/Filch.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
+    position: absolute;
   }
 
   .efecto-visual-granos::before {
@@ -241,10 +251,10 @@
       radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
       radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
       radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
-    background-size: 30px 30px; /* Tamaño del grano */
+    background-size: 15px 15px; 
     background-repeat: no-repeat;
-    background-position: 40% 30%, 55% 60%, 30% 50%, 70% 50%, 50% 0%, 50% 90%, 45% 60%; /* Posiciones de los granos */
-    animation: mostrarGranos 4s infinite; /* Animación para mostrar los granos */
+    background-position: 55% 40%, 70% 55%, 70% 45%, 60% 25%, 70% 20%, 55% 55%, 65% 40%; 
+    animation: mostrarGranos 6s infinite; 
   }
 
   @keyframes mostrarGranos {
@@ -271,9 +281,9 @@
     50% {
       background-image: 
         radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
         radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
         radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%),
         radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
@@ -283,65 +293,106 @@
         radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
         radial-gradient(circle, #B1C145, #ffff 50%, transparent 50%),
         radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
         radial-gradient(circle, rgba(255, 0, 0, 0) 0%, rgba(255, 255, 255, 0) 50%, transparent 50%);
     }
     100% {
       background-image: 
         radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, #B1C145 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
-        radial-gradient(circle, #B1C145 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
-        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%),
-        radial-gradient(circle, #B1C145 0%, rgba(255, 255, 255, 0.5) 50%, transparent 50%),
+        radial-gradient(circle, #B1C145, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #B1C145 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
+        radial-gradient(circle, #FFDB58 0%, #ffff 50%, transparent 50%),
         radial-gradient(circle, rgba(255, 0, 0, 0.8) 0%, #ffff 50%, transparent 50%);
     }
   }
-.lengua {
-  width: 200px; /* Ancho en la parte superior */
-  height: 400px; /* Inicialmente larga */
-  background-color: #ff6666; /* Color rosado para la lengua */
-  border-radius: 100% 50% 45% 45%;
-  border: 2px solid #ff3366; /* Un borde más oscuro para dar profundidad */
+  .boca {
+    width: 280px; 
+    height: 350px; 
+    background-image: url("../src/assets/boca.png");
+    background-size: cover;
+    position: absolute; 
+    margin: 0 auto; 
+  }
+  
+  .lengua {
+    width: 250px; 
+    height: 60px; 
+    background-color: #C62828; 
+    border-radius: 100% 50% 45% 45%;
+    border: 2px solid #B71C1C; 
+    position: absolute;
+    top: 50%; 
+    left: 40%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: enrollarLengua 3s ease-in-out forwards; 
+  }
+  
+  @keyframes enrollarLengua {
+    0% {
+      height: 60px; 
+      width: 200px; 
+      transform: translateX(-50%) translateY(-40%); 
+    }
+    100% {
+      height: 600px;
+      width: 200px; 
+      transform: translateX(-50%) translateY(0px); 
+    }
+  }
+   
+  @keyframes firework {
+    0% { 
+      transform: translate(-50%, 60vh);
+      width: 0.5vmin;
+      opacity: 1;
+    }
+    50% { 
+      width: 0.5vmin;
+      opacity: 1;
+    }
+    100% { 
+      width: 45vmin; 
+      opacity: 0; 
+    }
+  }
+  
+  .firework,
+.firework::before,
+.firework::after {
+  --top: 60vh;
+  content: "";
   position: absolute;
-  margin-top: 90px auto;
-  animation: enrollarLengua 3s ease-in-out infinite alternate; /* Subida y bajada continua */
-}
-
-@keyframes enrollarLengua {
-  0% {
-    height: 300px; /* Altura inicial larga */
-    width: 80px; /* Más angosta en la parte inferior */
-    transform: translate (0); /* Posición inicial más arriba */
-  }
-  25% {
-    transform: translateY(-50px); /* Sube un poco */
-  }
-  50% {
-    height: 200px; /* Se acorta mientras se enrolla */
-    width: 120px; /* Se ensancha un poco mientras sube */
-    transform: translateY(0); /* Baja nuevamente */
-  }
-  75% {
-    transform: translateY(-50px); /* Sube nuevamente */
-  }
-  100% {
-    height: 60px; /* Se convierte en un rollito más compacto */
-    width: 150px; /* Ancho en la parte superior */
-    transform: translateY(-140px); /* Completa el giro en espiral y sube */
-  }
-}
-
-.lengua::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
-  width: 50px;
-  height: 50px;
-  background-color: #ff6f61;
-  border-radius: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  width: 0.5vmin;
+  aspect-ratio: 6;
+  background:
+    radial-gradient(circle, #B71C1C 1.6vmin, #0000 0) 20% 10%,
+    radial-gradient(circle, #0000ff 2.4vmin, #0000 0) 10% 80%,
+    radial-gradient(circle, #B71C1C 4vmin, #0000 0) 80% 30%,
+    radial-gradient(circle, #0000ff 1.6vmin, #0000 0) 60% 70%,
+    radial-gradient(circle, #ff0 2.4vmin, #0000 0) 30% 90%,
+    radial-gradient(circle, #B71C1C 4vmin, #0000 0) 75% 50%,
+    radial-gradient(circle, #ff0 4vmin, #0000 0) 90% 10%,
+    radial-gradient(circle, #0000ff 1.6vmin, #0000 0) 40% 60%,
+    radial-gradient(circle, #B71C1C 2.4vmin, #0000 0) 10% 20%,
+    radial-gradient(circle, #ff0 1.6vmin, #0000 0) 70% 90%,
+    radial-gradient(circle, #0000ff 2.4vmin, #0000 0) 20% 40%,
+    radial-gradient(circle, #ff0 4vmin, #0000 0) 50% 15%;
+  background-size: 1vmin 1vmin; 
+  background-repeat: no-repeat;
+  animation: firework 5s infinite;
+}
+
+.firework::before {
+  transform: translate(-50%, -50%) rotate(65deg) !important; 
+}
+
+.firework::after {
+  transform: translate(-50%, -50%) rotate(-180deg) !important;
 }

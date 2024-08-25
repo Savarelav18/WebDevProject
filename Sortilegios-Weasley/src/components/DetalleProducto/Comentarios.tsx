@@ -6,7 +6,7 @@ interface ComentariosProps {
 }
 export function Comentarios({ comentarios }: ComentariosProps) {
     return (
-        <div className="container-comentarios">
+        <div className="container-comentarios" style={{marginTop:"5rem"}}>
             <CrearComentario />
             {comentarios.map(comentario => (<Coment comentario={comentario} />))}
         </div>

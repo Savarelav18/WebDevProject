@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { json } from "react-router-dom";
 
 export function useLocalStorage<T>(llave:string, valorinicial: T | (()=>T)){
     const[valor,setValor] = useState<T>(()=>{

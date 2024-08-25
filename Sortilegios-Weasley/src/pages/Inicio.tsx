@@ -16,11 +16,11 @@ function Inicio() {
       <Bienvenida/>
       <Container>
       <h1 style={{color:"white",margin:"1em 2.5em",fontSize:"42px"}}>Productos más vendidos</h1>
-        <Row>
-          <Col>
-          <Producto productos={productos.filter(producto=>producto.id<=4)}/>
-          </Col>
-        </Row>
+        <Container style={{marginTop:"2rem"}}>
+          <Row style={{gap:"2rem", display:"flex",justifyContent:"center"}}>
+          <Producto productos={productos.slice(0,4)}/>
+          </Row>
+        </Container>
       </Container>
 
 

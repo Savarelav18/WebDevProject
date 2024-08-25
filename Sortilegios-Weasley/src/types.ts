@@ -1,4 +1,4 @@
-type Categoria = "pociones" | "dulces" | "varitas";
+type Categoria = "Bromas" | "Dulces" | "Explosivos";
 type Divisa = "galeones" | "sickles" | "knuts";
 
 export interface Comentario {

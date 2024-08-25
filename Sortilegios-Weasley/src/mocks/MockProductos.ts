@@ -8,92 +8,130 @@ export const mockProductos: Producto[] = [
         creador: "Fred and George Weasley",
         advertencia: "Si te da pena mostrar tus entradas prominentes, no lo uses.",
         duracion: "Desconocida",
-        precio: 100,
+        precio: 3,
         cantidad: 10,
-        categoria: "pociones",
+        categoria: "Bromas",
         divisa: "galeones",
         calificacion: 4,
         efectoVisual: "efecto-visual-sombrero",
         efecto: "sombrero-antigravedad",
         imagenes: [
-            "https://static.wikia.nocookie.net/harrypotter/images/0/03/Anti_Gravity_Hat.gif"],
+            "..//src/assets//Anti_Gravity_Hat.jpeg",
+            "..//src/assets//sombrero1.jpg",
+            "..//src/assets//sombrero2.jpg",
+            "..//src/assets//sombrero3.jpg"
+           ],
         comentarios: [
             {
                 id: 1,
-                usuario: "Harry Potter",
-                contenido: "Es una excelente poción de amor, la recomiendo.",
-                calificacion: 5,
-                fecha: "2024/03/10"
-            },
-            {
-                id: 2,
-                usuario: "Hermione Granger",
-                contenido: "Es una poción muy peligrosa, no se debe beber.",
-                calificacion: 1,
-                fecha: "2024/03/11"
-            },
-            {
-                id: 3,
                 usuario: "Ron Weasley",
-                contenido: "No la he probado, pero me gustaría.",
-                calificacion: 3,
+                contenido: "Me gusta ver a los muggles tratar de agarralos.",
+                calificacion: 4,
                 fecha: "2024/03/12"
-            },
+            }
         ]
     },
     {
         id: 2,
-        nombre: "Felix Felicis",
-        descripcion: "Es una poción que otorga buena suerte a quien la bebe. El efecto dura aproximadamente 24 horas.",
+        nombre: "Los irrompibles huevos de Eduardo",
+        descripcion: "El truco consiste en que por más que lo intentes, no lograrás quebrarlo.",
         creador: "Desconocido",
-        advertencia: "No se debe beber en grandes cantidades, ya que puede causar euforia excesiva y comportamiento irracional.",
-        duracion: "24 horas",
-        precio: 200,
+        advertencia: "Que no sea el único huevo que tengas disponible para el desayuno.",
+        duracion: "Infinita",
+        precio: 1,
         cantidad: 5,
-        categoria: "pociones",
+        categoria: "Bromas",
         divisa: "galeones",
-        calificacion: 5,
+        calificacion: 0,
         efectoVisual: "efecto-visual-huevo",
         efecto: "huevo",
         imagenes: [
-            "https://static.wikia.nocookie.net/harrypotter/images/7/7a/EduardosUnbreakableEggs.jpg"],
+            "..//src/assets//EduardosUnbreakableEggs.jpeg",
+            "..//src/assets//EduardosUnbreakableEggs2.jpeg",
+            "..//src/assets//EduardosUnbreakableEggs3.jpeg",
+            "..//src/assets//EduardosUnbreakableEggs4.jpeg"],
         comentarios: []
     },
     {
         id: 3,
-        nombre: "Caramelo longuilinguo",
-        descripcion: "Es un caramelo que al ser comido, hace que la lengua del consumidor se alargue.",
+        nombre: "Caramelo acneico",
+        descripcion: "Es un caramelo que al ser comido, hace que toda tu cara se llene de acne.",
         creador: "Fred y George Weasley",
-        advertencia: "No se debe comer en grandes cantidades, ya que puede causar malestar estomacal.",
-        duracion: "Desconocida",
-        precio: 5,
+        advertencia: "Si tienes una cita en la noche, ni se te ocurra probarlo.",
+        duracion: "24 horas",
+        precio: 11,
         cantidad: 100,
-        categoria: "dulces",
+        categoria: "Dulces",
         divisa: "sickles",
         calificacion: 3,
         efectoVisual: "efecto-visual-granos",
         efecto: "granos",
-        imagenes: [
-            "https://i.ytimg.com/vi/yIo-KT7BstM/maxresdefault.jpg"
+        imagenes: ["..//src/assets//Acne.jpeg",
+                    "..//src/assets//Acne1.jpeg",
+                    "..//src/assets//Ance2.jpg",
+                    "..//src/assets//Acne3.jpeg"
         ],
-        comentarios: []
+        comentarios: [ {
+            id: 1,
+            usuario: "Hermione Granger",
+            contenido: "Es asqueroso.",
+            calificacion: 1,
+            fecha: "2024/03/12",
+        },
+        {
+            id: 2,
+            usuario: "Ron Weasley",
+            contenido: "Jajaja no se los des a tu novia.",
+            calificacion: 5,
+            fecha: "2024/03/12"
+        }]
     },
     {
         id: 4,
-        nombre: "Lengua de serpiente",
-        descripcion: "Son caramelos que te alargan la lengua.",
+        nombre: "Caramelo longuilinguo",
+        descripcion: "Son caramelos que al comersen, hacen que tu lengua se alargue.",
         creador: "Bertie Bott",
         advertencia: "Sino quieres que se arrastre tu lengua por el piso, no comas más de 1.",
         duracion: "1 minuto",
         precio: 10,
         cantidad: 200,
-        categoria: "dulces",
+        categoria: "Dulces",
         divisa: "sickles",
         calificacion: 4,
-        efectoVisual: "",
+        efectoVisual: "boca",
         efecto: "lengua",
-        imagenes: ["https://image.lexica.art/full_webp/2757f017-5ae4-47a5-8e2e-a0aaf28c33fc"
+        imagenes: ["..//src/assets//Lengua.jpg",
+                    "..//src/assets//Lengua1.jpg",
+                    "..//src/assets//Lengua2jpg.jpg",
+                    "..//src/assets//Lengua3.jpg"
         ],
         comentarios: []
+    },
+    {
+        id: 5,
+        nombre: "Fuegos artificiales",
+        descripcion: "Dale color a una noche oscura con una caja de nuestros fuegos artificiales, solo hay que abrir la caja para que la magia ocurra.",
+        creador: "Fred y George Weasley",
+        advertencia: "No dejar al alcance de los niños.",
+        duracion: "Hasta que el último de la caja explote",
+        precio: 45,
+        cantidad: 200,
+        categoria: "Explosivos",
+        divisa: "sickles",
+        calificacion: 5,
+        efectoVisual: "",
+        efecto: "firework",
+        imagenes: ["..//src/assets//firework.jpg",
+                    "..//src/assets//firework1.jpg",
+                    "..//src/assets//firework2.jpg",
+                    "..//src/assets//firework3.jpg"
+        ],
+        comentarios: [
+        {  id: 1,
+            usuario: "Pepito Perez",
+            contenido: "Son muy bonitos y lo mejor es que no hay que manipularlos.",
+            calificacion: 5,
+            fecha: "2024/03/12",}
+        ]
     }
 ];
