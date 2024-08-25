@@ -4,12 +4,9 @@ import { useState } from "react";
 import { usuario } from "../elements/variablesGlobales";
 import { useNavigate } from "react-router-dom";
 import PasswordInput from "../elements/showPassword";
-import { Button } from "react-bootstrap";
-/* import { useUserForm } from "../elements/variablesGlobales"; */
 
 
 export const LoginForm = () =>{
-    /* const {saveUser, savePswrd} = useUserForm(); */
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState(false);
@@ -56,7 +53,7 @@ export const LoginForm = () =>{
 
     <NavBar/>
     <link rel="stylesheet" href="../styles/Login.css"></link>
-    <div className="cont">
+    <div className="content">
         <div className="formulario"  >
             <h1>INICIA SESIÓN</h1>
             <p>¿Aún no tienes cuenta?</p> 
