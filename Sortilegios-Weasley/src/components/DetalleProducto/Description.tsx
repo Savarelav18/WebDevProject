@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Producto } from "../../types.ts";
 import { Button } from "../../elements/Button.tsx";
 import { Snitch } from "../../elements/Snitch.tsx";

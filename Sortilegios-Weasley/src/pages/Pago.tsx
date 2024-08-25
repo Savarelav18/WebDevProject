@@ -26,12 +26,53 @@ export function Pago() {
             }
         }
     }
-    function handlePago() {
+
+    const validateCard = (value: string): boolean => {
+        const cardPattern = /^[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}$/;
+        return cardPattern.test(value);
+    };
+
+    const validateSecurity = (value: string): boolean => {
+        const securityPattern = /^[0-9]{3}$/;
+        return securityPattern.test(value);
+    };
+
+    const validatePostal = (value: string): boolean => {
+        const postalPattern = /^[0-9]{6}$/;
+        return postalPattern.test(value);
+    };
+
+    const handlePago = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!validateCard(card)) {
+            alert('Número de tarjeta inválido. Debe seguir el formato: 1234 5678 9101 1121');
+            return;
+        }
+
+        if (!vencimiento) {
+            alert('Por favor, ingresa la fecha de vencimiento.');
+            return;
+        }
+
+        if (!validateSecurity(security)) {
+            alert('Código de seguridad inválido. Debe ser un número de 3 dígitos.');
+            return;
+        }
+
+        if (!validatePostal(postal)) {
+            alert('Código postal inválido. Debe ser un número de 6 dígitos.');
+            return;
+        }
+
+        // Si todos los campos son válidos, realiza la acción de pago
         vaciarCarrito()
         navigate("/DetalleCompra", {
             state: location.state,
         });
-    }
+        // Lógica para realizar el pago
+    };
+
     return (
         <>
             <NavBar />

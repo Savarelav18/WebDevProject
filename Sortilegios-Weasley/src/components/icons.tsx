@@ -123,13 +123,13 @@ export function IconoMenu(){
 }
 export function IconoLogout(){
     return(
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 128 128" id="login"><path stroke="#504f4f" stroke-width="8" d="M51.8164 39L77 64.1837 51.8164 89.3672M77 64L13 64"></path><path stroke="#504f4f" stroke-width="8" d="M64 111L111 111L111 17L64 17"></path></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 128 128" id="login"><path stroke="#504f4f" strokeWidth="8" d="M51.8164 39L77 64.1837 51.8164 89.3672M77 64L13 64"></path><path stroke="#504f4f" strokeWidth="8" d="M64 111L111 111L111 17L64 17"></path></svg>
     )
 }
 
 export function IconoUser(){
     return(
-<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" enable-background="new 0 0 48 48" viewBox="0 0 48 48" id="witch"><polygon fill="#bc9c73" points="13 34 1 39 1 25 13 30"></polygon><polygon fill="#ccb9ae" points="10.177 28.824 1 25 1 38"></polygon><rect width="3" height="4" x="13" y="30" fill="#bc9c73"></rect><path fill="#ccc" d="M30.189,16.059c-0.614-0.918-1.856-1.165-2.774-0.552c-0.918,0.614-1.165,1.856-0.552,2.774l8.889,13.304
+<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" enableBackground="new 0 0 48 48" viewBox="0 0 48 48" id="witch"><polygon fill="#bc9c73" points="13 34 1 39 1 25 13 30"></polygon><polygon fill="#ccb9ae" points="10.177 28.824 1 25 1 38"></polygon><rect width="3" height="4" x="13" y="30" fill="#bc9c73"></rect><path fill="#ccc" d="M30.189,16.059c-0.614-0.918-1.856-1.165-2.774-0.552c-0.918,0.614-1.165,1.856-0.552,2.774l8.889,13.304
 	c0.614,0.918,1.856,1.165,2.774,0.552c0.918-0.614,1.165-1.856,0.552-2.774L30.189,16.059z"></path><path fill="#efefef" d="M35.752,31.585c0.09,0.134,0.196,0.249,0.309,0.354l2.84-2.84l-8.713-13.039
 	c-0.614-0.918-1.856-1.165-2.774-0.552c-0.918,0.614-1.165,1.856-0.552,2.774L35.752,31.585z"></path><path fill="#ccc" d="M21,43.172c-0.781,0.781-0.781,2.047,0,2.828s2.047,0.781,2.828,0l7.586-7.586c0.781-0.781,0.781-2.047,0-2.828
 	c-0.781-0.781-2.047-0.781-2.828,0L21,43.172z"></path><path fill="#efefef" d="M31.414,35.586c-0.781-0.781-2.047-0.781-2.828,0L21,43.172c-0.781,0.781-0.781,2.047,0,2.828L31.414,35.586z"></path><circle cx="30" cy="11" r="4" fill="#ccc"></circle><path fill="#efefef" d="M27.173,13.827l5.655-5.655c-0.361-0.361-0.795-0.661-1.297-0.868c-2.041-0.845-4.381,0.124-5.226,2.165

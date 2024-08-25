@@ -4,6 +4,7 @@ import { Producto as producto } from "../types"
 import {useCarritoCompras} from "../context/carrito"
 import {Card, Button} from "react-bootstrap";
 import { IconoPeso } from "../components/icons";
+import { COPFormmater, magicDivisesToMuggle } from "../services/ConversorDivisas";
 
 interface ProductosProp {
     productos: producto[];
@@ -24,7 +25,7 @@ export const Producto: React.FC<ProductosProp> = ({ productos }) => {
                     <Card.Text >
                             <Snitch calificacion={producto.calificacion}></Snitch>
                         </Card.Text>
-                        <Card.Text style={{display:"flex",alignItems:"center"}}><IconoPeso></IconoPeso>{producto.precio} Galeones</Card.Text>
+                        <Card.Text style={{display:"flex",alignItems:"center"}}><IconoPeso></IconoPeso>{producto.precio} {producto?.divisa} / {COPFormmater(magicDivisesToMuggle(producto!.divisa, producto!.precio)!)} COP</Card.Text>
                     </Card.Body>
                     <Card.Footer style={{borderTop:"none"}}>{getCantidadProducto(producto.id)===0?
                     (<Button style={{width:"100%", backgroundColor:"#038bbb",border:"none"}} onClick={()=> aumentarCantidadProducto(producto.id)}>Añadir al carrito</Button>):

@@ -4,7 +4,6 @@ import { ProductoCompra } from "../components/DetalleCompra/ProductoCompra";
 import { COPFormmater } from "../services/ConversorDivisas";
 import { useNavigate } from "react-router-dom";
 import "../styles/DetalleCompra.css"
-import { ProductoCarrito } from "../types";
 import { ItemCarrito } from "../context/carrito";
 
 export function DetalleCompra() {
