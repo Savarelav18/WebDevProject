@@ -19,7 +19,7 @@ export const mockProductos: Producto[] = [
             "..//src/assets//Anti_Gravity_Hat.jpeg",
             "..//src/assets//sombrero1.jpg",
             "..//src/assets//sombrero2.jpg",
-            "..//src/assets//sombrero3.jpg"
+            "..//src/assets//sombrero3.jpg",
            ],
         comentarios: [
             {

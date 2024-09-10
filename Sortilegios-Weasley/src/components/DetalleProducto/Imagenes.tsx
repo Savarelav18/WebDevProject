@@ -8,7 +8,7 @@ export function Imagenes({ imagenes }: ImagenesProps) {
         setActualImg(index);
     }
     return (
-        <div className="container-big-img">
+        <div className="d-flex flex-column align-items-center">
             <img src={imagenes[actualImg]} className="big-image" />
             <div className="mini-imgs-container">
                 {imagenes.map((img, index) => (

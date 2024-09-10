@@ -23,6 +23,7 @@ export const Producto: React.FC<ProductosProp> = ({ productos }) => {
                     </Card.Body>
                     <Card.Body>
                     <Card.Text >
+                            <span style={{display:"block"}}><strong>Categoria: </strong> {producto.categoria}</span>
                             <Snitch calificacion={producto.calificacion}></Snitch>
                         </Card.Text>
                         <Card.Text style={{display:"flex",alignItems:"center"}}><IconoPeso></IconoPeso>{producto.precio} {producto?.divisa} / {COPFormmater(magicDivisesToMuggle(producto!.divisa, producto!.precio)!)} COP</Card.Text>

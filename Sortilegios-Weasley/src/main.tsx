@@ -16,6 +16,7 @@ import { Tienda } from "./pages/Tienda.tsx";
 import { CarritoComprasProvider } from "./context/carrito.tsx";
 import { RegisterForm } from "./components/RegisterForm.tsx";
 import { LoginForm } from "./components/LoginForm.tsx";
+import { ToastContainer } from "react-toastify";
 
 
 const router = createBrowserRouter([

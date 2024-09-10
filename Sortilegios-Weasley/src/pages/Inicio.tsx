@@ -14,8 +14,8 @@ function Inicio() {
     <>
       <NavBar/>
       <Bienvenida/>
-      <Container>
-      <h1 style={{color:"white",margin:"1em 2.5em",fontSize:"42px"}}>Productos más vendidos</h1>
+      <Container id='ProductosVendidos'>
+      <h1>Productos más vendidos</h1>
         <Container style={{marginTop:"2rem"}}>
           <Row style={{gap:"2rem", display:"flex",justifyContent:"center"}}>
           <Producto productos={productos.slice(0,4)}/>
