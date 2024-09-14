@@ -22,11 +22,11 @@ import { ToastContainer } from "react-toastify";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Inicio/>,
+    element: <Inicio />,
   },
   {
     path: "/SobreNosotros",
-    element: <Sobre_Nosotros/>,
+    element: <Sobre_Nosotros />,
   },
   {
     path: "/DetalleProducto",
@@ -51,20 +51,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/Tienda",
-    element: <Tienda/>,
+    element: <Tienda />,
   },
   {
     path: "/Login",
-    element: <LoginForm/>,
+    element: <LoginForm />,
   },
   {
     path: "/Register",
-    element: <RegisterForm/>,
+    element: <RegisterForm />,
   },
 
   {
     path: "/SobreNosotros",
-    element: <Sobre_Nosotros/>,
+    element: <Sobre_Nosotros />,
   },
 ]);
 
@@ -72,9 +72,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ProductsProvider>
-        <CarritoComprasProvider>
-      <RouterProvider router={router} />
-        </CarritoComprasProvider>
+      <CarritoComprasProvider>
+        <RouterProvider router={router} />
+      </CarritoComprasProvider>
     </ProductsProvider>
   </React.StrictMode>
 );
