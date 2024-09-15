@@ -5,31 +5,43 @@ import { Imagenes } from "../components/DetalleProducto/Imagenes.tsx";
 import { Descripcion } from "../components/DetalleProducto/Description.tsx";
 import { Comentarios } from "../components/DetalleProducto/Comentarios.tsx";
 import "../styles/DetalleProducto.css";
-import { Container,Row,Col,Button } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
 export function DetalleProducto() {
     const { productId } = useParams();
-    const producto = mockProductos.find(x => x.id === Number(productId));
-    const navigate =  useNavigate()
+    const [producto, setProducto] = useState(null);
+    useEffect(() => {
+        fetch(`http://localhost:8080/productos/${productId}`).then(response => {
+            if (response.status == 200) {
+                return response.json()
+            }
+            throw "Error"
+        }).then(data => setProducto(data));
+    }, [])
+    const navigate = useNavigate()
 
     return (
         <>
             <NavBar />
             <Container className="fondo-completo">
-            <Button id="btnVolver" onClick={()=>navigate("/Tienda")}>Volver</Button>
-                <Row className="fondo-descripcion">
-                    <Col>
-                    <Container>
-                    <Imagenes imagenes={producto!.imagenes} />
-                    </Container>
-                    </Col>
-                    <Col>
-                    <Container>
-                    <Descripcion producto={producto!} />
-                    </Container>
-                    </Col>
-                </Row>
-                <Comentarios comentarios={producto!.comentarios} />
+                {producto ? <>
+                    <Button id="btnVolver" onClick={() => navigate("/Tienda")}>Volver</Button>
+                    <Row className="fondo-descripcion">
+                        <Col>
+                            <Container>
+                                <Imagenes imagenes={producto && producto!.imagenes} />
+                            </Container>
+                        </Col>
+                        <Col>
+                            <Container>
+                                <Descripcion producto={producto!} />
+                            </Container>
+                        </Col>
+                    </Row>
+                    <Comentarios comentarios={producto!.comentarios} />
+                </>
+                    : "Error: el producto solicitado no se encuentra"}
             </Container >
 
         </>
