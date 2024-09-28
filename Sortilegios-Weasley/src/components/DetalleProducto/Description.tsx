@@ -32,7 +32,6 @@ export function Descripcion({ producto }: DescripcionProps) {
         <div className="container-description">
             <div className="tittle-back">
                 <h2>{producto?.nombre}</h2>
-                <Button className="volver" onClick={handleVolver}>Volver</Button>
             </div>
             <div className="calificacion">
                 <h3>Calificación: </h3>

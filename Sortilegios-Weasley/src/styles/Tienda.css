@@ -14,15 +14,36 @@
     background-color: #0C2D4D;
 }
 
+#colProductos{
+    padding-left: 4rem;
+    margin-top: 1rem;
+}
+
 @media (max-width: 1024px) {
     .contenido-tienda {
         grid-template-columns: 20% 1fr; 
     }
+    
 }
 
-@media (max-width: 768px) {
+@media (max-width: 770px) {
     .contenido-tienda {
         grid-template-columns: 1fr;
+    }
+
+    #filterCol{
+        display: flex;
+        width: 95vw;
+        
+    }
+
+    #rowTienda{
+        display: flex;
+        justify-content: center;
+    }
+
+    #colProductos{
+        padding-left: 1rem;
     }
 }
 
