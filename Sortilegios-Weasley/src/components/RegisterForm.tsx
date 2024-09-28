@@ -4,7 +4,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PasswordInput from "../elements/showPassword";
 import { useUserForm } from "../elements/variablesGlobales";
-import { usuarios } from "../elements/usuarios.json"
+import { usuarios } from "../elements/usuarios.json";
+import { Button } from "react-bootstrap";
 
 export const RegisterForm = () =>{
     const {saveUser, setSaveUser, saveEmail, setSaveEmail, savePswrd, setSavePswrd } = useUserForm();
@@ -16,7 +17,7 @@ export const RegisterForm = () =>{
 
     const [error, setError] = useState(false);
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const registrar = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
         if (saveUser==="" || saveEmail==="" || savePswrd==="" || validate==="") {
@@ -63,7 +64,7 @@ export const RegisterForm = () =>{
             
             <span> <a href="/Login"> INICIA SESIÓN </a> </span> 
             
-            <form method="post" onSubmit={handleSubmit}> 
+            <form method="post" onClick={registrar}> 
                 <label>USUARIO*</label>
                 <input  
                 type='text'
@@ -84,7 +85,7 @@ export const RegisterForm = () =>{
                 <PasswordInput password={validate} setPassword={setValidate} />
                 <div className="message">
                 {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)}</div>
-                <button disabled={loading}>{loading ? "Registro exitoso": "REGISTRARSE"}</button>
+                <Button disabled={loading}>{loading ? "Registro exitoso": "REGISTRARSE"}</Button>
             
             </form>
         </div>

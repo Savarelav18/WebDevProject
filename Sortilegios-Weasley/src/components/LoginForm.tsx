@@ -17,7 +17,7 @@ export const LoginForm = () =>{
     const Navigate = useNavigate();
 
 
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
+    const pulsar = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
         if (username==="" || password==="") {
@@ -41,7 +41,7 @@ export const LoginForm = () =>{
 
         setError(false);
         setLoading(true);
-        setErrorMensaje("✨¡Alohomora!✨")
+        setErrorMensaje("✨¡Alohomora!🔑")
 
         setTimeout(() => {
             setLoading(false);
@@ -61,7 +61,7 @@ export const LoginForm = () =>{
             <p>¿Aún no tienes cuenta?</p> 
             
             <span> <a href="/Register"> REGISTRATE </a> </span> 
-            <form method="post" onSubmit={handleSubmit}> 
+            <form method="post" onClick={pulsar}> 
                 <label>USUARIO*</label>
                 <input  
                 type='text'
@@ -73,7 +73,9 @@ export const LoginForm = () =>{
                 <PasswordInput password={password} setPassword={setPassword} />
                 <div className="mensaje">
                 {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)} </div>
-                <button disabled={loading}>{loading ? "Cargando..." : "INICIAR SESIÓN"}</button>
+                <Button onClick={()=>pulsar} disabled={loading}>
+                {loading ? "Cargando..." : "INICIAR SESIÓN"}
+                </Button>
                 
             </form>
         </div>

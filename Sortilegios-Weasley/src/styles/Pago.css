@@ -25,7 +25,7 @@ form div input {
   margin-bottom: 2em;
 }
 .imagen-grin img {
-  width: 400px;
+  width: 30vw;
 }
 #primero {
   margin-top: 3rem;
@@ -49,4 +49,11 @@ form div input {
 }
 .form-izq form button:hover {
   opacity: 0.5;
+}
+
+@Media (max-width: 530px) {
+  .imagen-grin img{
+    display: flex;
+    align-content: flex-end;
+  }
 }
