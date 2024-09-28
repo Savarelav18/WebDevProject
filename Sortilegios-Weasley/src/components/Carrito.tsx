@@ -32,6 +32,20 @@ export function Carrito({ abierto }: CarritoProps) {
     });
   };
 
+  const notifyProducto = () => {
+    toast.info("Debes agregar un producto antes de proceder con el pago", {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme:"colored",
+      onClose: () => window.location.href="/Tienda"
+    });
+  };
+
   return (
     <>
       <Offcanvas show={abierto} onHide={cerrarCarrito} placement="end">
@@ -61,8 +75,14 @@ export function Carrito({ abierto }: CarritoProps) {
                 className="w-100"
                 style={{ backgroundColor: "#0C2D4D" }}
                 onClick={() => {
+                  console.log(productosCarrito)
                   if (login !== null) {
-                    window.location.href = "/DetallePedido";
+                    if(productosCarrito.length!=0){
+                      window.location.href = "/DetallePedido";
+                    }
+                    else{
+                      notifyProducto();
+                    }
                   } else {
                     notify(); // Mostrar el Toast si el usuario no está logueado
                   }

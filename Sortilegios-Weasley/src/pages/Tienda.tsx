@@ -3,22 +3,30 @@ import { Producto } from "../components/Producto"
 import { Button, Container, Stack, Col, Row } from "react-bootstrap"
 import "../styles/Tienda.css"
 import { DownArrowIcon, BromasIcon, DulcesIcon, ExplosivosIcon, UpArrowIcon } from "../components/icons"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Form from 'react-bootstrap/Form';
 import { mockProductos } from "../mocks/MockProductos.ts";
 import { CategoriaIcon } from "../components/CategoriaIcon.tsx"
+import { Producto as productoType } from "../types.ts"
+
+
+
 
 export const Tienda = () => {
-    const productos = mockProductos;
-    const categorias = [...new Set(productos.map(producto => producto.categoria))];
 
-    const [productosTienda, setProductos] = useState(productos)
-    const [productosFiltrados, setProductosFiltrados] = useState(productos)
+    const [productosTienda, setProductos] = useState<productoType[]>([])
+    const [productosFiltrados, setProductosFiltrados] = useState<productoType[]>([])
     const [busqueda, setBusqueda] = useState("")
     const [selectedCategory, setSelectedCategory] = useState("");
     const [selectedSortAsc, setselectedSortAsc] = useState(false);
     const [selectedSortDes, setselectedSortDes] = useState(false);
 
+    useEffect(() => {
+      fetch('http://localhost:8080/productos').then(response => response.json()).then(data => {setProductos(data),setProductosFiltrados(data)})
+    }, [])
+
+
+    const categorias = [...new Set(productosTienda.map(producto => producto.categoria))];
     const filtroCateforia = (categoria: string) => {
         if (selectedCategory === categoria) {
             // Si la categoría ya está seleccionada, deseleccionarla y mostrar todos los productos
@@ -26,7 +34,7 @@ export const Tienda = () => {
             setProductosFiltrados(productosTienda);
           } else {
             // Si no está seleccionada, aplicamos el filtro y cambiamos el estilo del botón
-            const filtro = productosTienda.filter(producto => producto.categoria === categoria);
+            const filtro = productosTienda && productosTienda.filter(producto => producto.categoria === categoria);
             setProductosFiltrados(filtro);
             setSelectedCategory(categoria);
           }
@@ -37,7 +45,7 @@ export const Tienda = () => {
         // Si ya está seleccionado, deseleccionar y mostrar productos no ordenados
         setProductosFiltrados(productosFiltrados);
         setselectedSortAsc(false);
-      } else {  
+      } else { 
       
       const ordenAsc = [...productosFiltrados].sort((a, b) => a.precio - b.precio)
         setProductosFiltrados(ordenAsc)

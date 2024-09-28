@@ -15,7 +15,8 @@ function Inicio() {
   useEffect(() => {
     fetch('http://localhost:8080/productos').then(response => response.json()).then(data => setData(data))
   }, [])
-  console.log(data)
+
+
   return (
     <>
       <NavBar />
@@ -24,7 +25,7 @@ function Inicio() {
         <h1>Productos más vendidos</h1>
         <Container style={{ marginTop: "2rem" }}>
           <Row style={{ gap: "2rem", display: "flex", justifyContent: "center" }}>
-            {data && <Producto productos={data} />}
+            {data && <Producto productos={data.slice(0, 4)} />}
           </Row>
         </Container>
       </Container>
