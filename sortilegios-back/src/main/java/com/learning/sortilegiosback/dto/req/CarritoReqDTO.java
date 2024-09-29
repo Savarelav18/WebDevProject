@@ -1,5 +1,6 @@
-package com.learning.sortilegiosback.dto.res;
+package com.learning.sortilegiosback.dto.req;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,17 +9,11 @@ import lombok.experimental.FieldDefaults;
 
 import java.util.List;
 
-
 @Getter
 @AllArgsConstructor
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class ProductosPreviewDTO {
-    Long id;
-    String nombre;
-    String categoria;
-    String divisa;
-    Double calificacion;
-    Double precio;
-    List<String> imagenes;
+public class CarritoReqDTO {
+    String username;
+    List<ProductoReqDTO> productos;
 }

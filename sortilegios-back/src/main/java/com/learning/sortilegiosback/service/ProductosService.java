@@ -1,12 +1,11 @@
 package com.learning.sortilegiosback.service;
 
-import com.learning.sortilegiosback.dto.res.ComentarioDTO;
-import com.learning.sortilegiosback.dto.res.ProductoDTO;
-import com.learning.sortilegiosback.dto.res.ProductoUpdateDTO;
-import com.learning.sortilegiosback.dto.res.ProductosPreviewDTO;
+import com.learning.sortilegiosback.dto.res.*;
+import com.learning.sortilegiosback.exception.BadRequestException;
 import com.learning.sortilegiosback.exception.NotFoundException;
 import com.learning.sortilegiosback.model.*;
 import com.learning.sortilegiosback.repository.*;
+import com.learning.sortilegiosback.util.ConversorDivisa;
 import com.learning.sortilegiosback.util.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,15 +26,15 @@ public class ProductosService {
     private IImagenRepository imagenRepository;
     @Autowired
     private IResenaRepository resenaRepository;
-
     @Autowired
     private IDivisaRepository divisaRepository;
-
     @Autowired
     private ICategoriaRepository categoriaRepository;
 
-    public List<ProductosPreviewDTO> getAllProductos(){
-        return productoRepository.findAll().stream().map( producto -> {
+    public List<ProductosPreviewDTO> getAllProductos(String order, String filter){
+        List<Producto> productos = getProductosByCategoria(filter);
+
+        return sortProductos(order, productos).stream().map( producto -> {
 
             List<Imagen> imagenes = imagenRepository.findByProductoId(producto.getId());
             Double promedio = getPromedioCalificacion(producto.getId());
@@ -116,7 +115,7 @@ public class ProductosService {
                 .build();
     }
 
-    public Producto updateProductoParcial(Long id, ProductoDTO productoUpdateDTO) {
+    public MessageDTO updateProductoParcial(Long id, ProductoDTO productoUpdateDTO) {
         Producto producto = productoRepository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Producto no encontrado"));
 
@@ -138,7 +137,34 @@ public class ProductosService {
         if (productoUpdateDTO.getPrecio() != null) {
             producto.setPrecio(productoUpdateDTO.getPrecio());
         }
+        productoRepository.save(producto);
+        return MessageDTO.builder()
+                .mensaje("Producto actualizado exitosamente")
+                .build();
+    }
+    private List<Producto> getProductosByCategoria(String categoria) {
+        if (!categoria.equals("none") && !categoria.equals("Bromas") && !categoria.equals("Dulces") && !categoria.equals("Explosivos")){
+            throw new BadRequestException("El parámetro categoria debe ser 'Bromas' o 'Dulces' o 'Explosivos' o no tener en su defecto");
+        }
+        if (categoria.equals("none")) {
+            return productoRepository.findAll();
+        }
+        return productoRepository.findAllByCategoria(categoria);
 
-        return productoRepository.save(producto);
+    }
+    private List<Producto> sortProductos(String sort, List<Producto> productos) {
+        if (!sort.equals("none") && !sort.equals("asc") && !sort.equals("desc")) {
+            throw new BadRequestException("El parámetro sort debe ser 'asc' o 'desc' o no tener en su defecto");
+        }
+        if (sort.equals("asc")) {
+            productos.sort((a, b) -> ConversorDivisa.convertirDivisa(a.getPrecio(), a.getDivisa().getNombre()).compareTo(ConversorDivisa.convertirDivisa(b.getPrecio(), b.getDivisa().getNombre())));
+            return productos;
+        } else if (sort.equals("desc")) {
+            productos.sort((a, b) -> ConversorDivisa.convertirDivisa(b.getPrecio(), b.getDivisa().getNombre()).compareTo(ConversorDivisa.convertirDivisa(a.getPrecio(), a.getDivisa().getNombre())));
+            return productos;
+        }
+        return productos;
+
+
     }
 }

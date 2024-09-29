@@ -11,4 +11,7 @@ import java.util.List;
 public interface ICarritoRepository extends JpaRepository<Carrito, Long> {
     @Query( value = "SELECT * FROM carrito JOIN compra WHERE compra_id = compra.id", nativeQuery = true)
     public List<Carrito> findAll();
+
+    @Query ("FROM Carrito c WHERE c.usuario.username = :username")
+    List<Carrito> findAllByUsuarioUsername(String username);
 }

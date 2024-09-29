@@ -1,11 +1,13 @@
 package com.learning.sortilegiosback.controller;
 
+import com.learning.sortilegiosback.dto.res.MessageDTO;
 import com.learning.sortilegiosback.dto.res.ProductoDTO;
 import com.learning.sortilegiosback.dto.res.ProductoUpdateDTO;
 import com.learning.sortilegiosback.dto.res.ProductosPreviewDTO;
 import com.learning.sortilegiosback.model.Producto;
 import com.learning.sortilegiosback.service.ProductosService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -22,9 +24,10 @@ public class ProductosController {
     private ProductosService productosService;
 
 
-    @GetMapping
-    public ResponseEntity<List<ProductosPreviewDTO>> getAllProductos(){
-        return new ResponseEntity<>(productosService.getAllProductos(), HttpStatus.OK);
+    @GetMapping()
+    public ResponseEntity<List<ProductosPreviewDTO>> getAllProductos(@RequestParam(required = false, defaultValue = "none")  String order,
+                                                                     @RequestParam(required = false, defaultValue = "none")  String filter) {
+        return new ResponseEntity<>(productosService.getAllProductos(order, filter), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
@@ -39,10 +42,10 @@ public class ProductosController {
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Producto> updateProductoParcial(
+    public ResponseEntity<MessageDTO> updateProducto(
             @PathVariable Long id,
             @RequestBody ProductoDTO productoDTO) {
-        Producto updatedProducto = productosService.updateProductoParcial(id, productoDTO);
-        return new ResponseEntity<>(updatedProducto, HttpStatus.OK);
+
+        return new ResponseEntity<>(productosService.updateProductoParcial(id, productoDTO), HttpStatus.OK);
     }
 }

@@ -1,6 +1,9 @@
 package com.learning.sortilegiosback.controller;
 
 
+import com.learning.sortilegiosback.dto.req.ComentarioReqDTO;
+import com.learning.sortilegiosback.dto.res.MessageDTO;
+import com.learning.sortilegiosback.dto.res.ResenaResDTO;
 import com.learning.sortilegiosback.model.Resena;
 import com.learning.sortilegiosback.service.ResenaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +26,7 @@ public class ResenaController {
 
     // Obtener todas las reseñas
     @GetMapping
-    public List<Resena> getAllResenas() {
+    public List<ResenaResDTO> getAllResenas() {
         return resenaService.getAllResenas();
     }
 
@@ -37,7 +40,7 @@ public class ResenaController {
 
     // Crear una nueva reseña
     @PostMapping
-    public Resena createResena(@RequestBody Resena resena) {
+    public MessageDTO createResena(@RequestBody ComentarioReqDTO resena) {
         return resenaService.createResena(resena);
     }
 
