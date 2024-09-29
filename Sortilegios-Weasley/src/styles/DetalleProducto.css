@@ -12,11 +12,6 @@
 .fondo-descripcion {
   display: flex;
 }
-.container-big-img {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-}
 .big-image {
   margin-bottom: 20px;
   width: 80%;
@@ -36,7 +31,7 @@
   margin-right: 10px;
 }
 .container-description {
-  width: 60%;
+  margin-top: 2rem;
 }
 .container-description h2 {
   font-weight: bold;
@@ -121,7 +116,8 @@
   margin-bottom: 1em;
 }
 .der {
-  margin-left: 94%;
+  margin-top: 2rem;
+  width: 20%;
 }
 .usuario-coment {
   margin: 1em 0;
@@ -143,20 +139,70 @@
   padding: 6px;
 }
 
+#btnVolver{
+  position: relative;
+  right: -90%;
+  top: 5%;
+  background-color:#038bbb;
+  border: none;
+}
+
 
 @media (max-width: 850px) {
   #two-buttons button {
     margin: 0.5rem 0;
   }
 
+  .fondo-completo {
+    width: 100%;
+    border-radius: 0px;
+    font-family: "Cinzel";
+    padding: 40px 50px;
+    box-sizing: border-box;
+  }
+
+  .fondo-descripcion {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .big-image {
+    margin: 1rem 0;
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+  }
+
+  #btnVolver{
+    display: flex;
+    position: unset;
+  }
+
+  .der {
+    margin-top: 2rem;
+    width: 40%;
+  }
+
+  .efecto-visual-sombrero {
+    width: 100px; /* Cambia el tamaño a 100px */
+    height: 100px;
+  }
+
+
+  .sombrero-antigravedad{
+    max-width:200px;
+    max-height: 300px;
+  }
+
 
 }
 .efecto-visual-huevo {
   position: fixed;
-  top: 0;
+  top: -10%;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
+  aspect-ratio: 0.2;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -170,7 +216,7 @@
   border-radius: 50% 50% 45% 45%;
   border: 2px solid #f6ddcc;
   position: relative;
-  animation: caer 2s ease-in-out forwards;
+  animation: caer 2s ease-out forwards;
 }
 
 @keyframes caer {
@@ -217,7 +263,7 @@
   background-image: url("../src/assets/sombrero.png"); 
   background-size: cover;
   position: relative;
-  animation: levitar 4s ease-in-out infinite;
+  animation: levitar 6s ease-out infinite;
 }
 
 @keyframes levitar {
@@ -235,7 +281,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: absolute;
+    position: fixed;
     top: 50%;
   }
 
@@ -315,7 +361,7 @@
     height: 350px; 
     background-image: url("../src/assets/boca.png");
     background-size: cover;
-    position: absolute; 
+    position: fixed;
     top: 20%;
   }
   
@@ -326,7 +372,7 @@
     border-radius: 100% 50% 45% 45%;
     border: 2px solid #B71C1C; 
     position: absolute;
-    top: 50%; 
+    top: 50%;
     left: 40%;
     transform: translateX(-50%) translateY(-50%);
     animation: enrollarLengua 3s ease-in-out forwards; 
@@ -364,8 +410,8 @@
   .firework,
 .firework::before,
 .firework::after {
-  position: absolute;
-  top: 20%;
+  position: fixed;
+  top: 40%;
   left: 0;
   width: 10px;
   height: 10px;

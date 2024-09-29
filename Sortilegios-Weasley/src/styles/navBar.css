@@ -116,9 +116,12 @@ Nav{
     #ContentMenu a:hover {
         background-color: #dfb375;
         border-radius: 10px 10px 10px 10px;
-        transition: all 0.4s ease-in-out;
-        
+        transition: all 0.4s ease-in-out;      
 
+    }
+
+    .navbar-brand{
+        display: none;
     }
 
 }
