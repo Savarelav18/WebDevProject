@@ -2,7 +2,7 @@ import { MiniDescProd } from "../../elements/DetallePedido/MiniDescProd";
 import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivisas";
 import { mockProductos } from "../../mocks/MockProductos.ts";
 import { useState } from "react";
-import {Producto, ProductoCarrito} from "../../types";
+//import {Producto, ProductoCarrito} from "../../types";
 import imag from "../../assets/DetallePedido/selloGringottts.png";
 import { useNavigate } from "react-router-dom";
 import {ItemCarrito} from "../../context/carrito.tsx"

@@ -1,11 +1,14 @@
 .contenedor-fondo {
+  font-family: "Cinzel";
   width: 80%;
   max-width: 1200px;
-  margin: 20px auto;
-  font-family: "Cinzel";
-  box-sizing: border-box;
+  margin: 0 auto; 
   display: flex;
   justify-content: space-between;
+}
+.contenedor-productos,
+.contenedor-resumen {
+    box-sizing: border-box;
 }
 .contenedor-productos {
   width: 69%;
@@ -16,15 +19,16 @@
   box-sizing: border-box;
   border-radius: 10px;
   margin-bottom: 20px;
+  margin-right: 4%;
 }
-.contenedor-resumen {
-  width: 29%;
-}
+
 .resumen-compra {
+  width: 250px;
   background-color: white;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 10px;
+  margin-bottom: 4%;
 }
 .mini-desc-prod {
   display: flex;
@@ -61,7 +65,7 @@
 }
 .producto-muestra h3 {
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .producto-muestra hr {
   margin: 1rem 0 1.5rem 0;
@@ -70,41 +74,49 @@
   display: flex;
 }
 .producto-muestra .img-container img {
-  max-width: 10%;
-  height: auto;
+  width: 11vw;
+  height: 9vw;
   overflow: clip;
   display: block;
   margin-right: 20px;
 }
 .img-container .button-eliminar {
-  background-color: #038bbb;
+  background-color: #590B13;
   color: White;
   border: none;
   font-family: "Cinzel";
   border-radius: 10px;
-  font-weight: 600;
-  height: 3em;
-  padding: 10px;
+  font-weight: 500;
+  height: 2em;
+  padding: 3px;
   margin-top: 1em;
+  font-size: 0.8em;
 }
+
 .img-container .button-eliminar:hover {
   opacity: 0.5;
 }
-.descp-prod .botones {
+.descp-prod p {
+  font-size: 1em;
+}
+div.bot {
+  height: 100%;
+  align-items: self-end;
+}
+p.costo{
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  margin: 2%;
+  font-size: larger;
 }
 .descp-prod .botones .bot {
-  width: 25%;
   display: flex;
-  justify-content: space-between;
+  justify-content: right;
 }
 .descp-prod .botones .precio-producto {
   margin-top: 14px;
 }
-.img-container .cost .costo {
-  margin-top: 25px;
-}
+
 form {
   margin-top: 1em;
 }
@@ -119,12 +131,39 @@ form {
   margin: 1rem 0;
 }
 .button-compra img {
-  width: 30px;
-  margin-top: -5px;
+  width: 50px;
+  margin-top: -9px;
 }
 .button-compra p {
   margin-top: 1px;
 }
 form a {
   text-decoration: none;
+}
+
+@media (max-width: 650px) {
+.resumen-compra {
+  width: 77vw;
+  align-items: center;
+}
+  .contenedor-fondo {
+    display: flex;
+    flex-direction: column-reverse; 
+  }
+  .descp-prod p {
+    font-size: 2.3vw;
+  }
+  .contenedor-productos .producto-muestra {
+    margin-bottom: 4%;
+  }
+  .producto-muestra {
+    width: 77vw;
+  }
+  .resumen-compra h2 {
+    font-size: 2vh;
+  }
+  .producto-muestra .img-container img {
+    width: 76px;
+    height: 76px;
+  }
 }

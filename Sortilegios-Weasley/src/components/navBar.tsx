@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom"
-import { usuario } from "../elements/variablesGlobales";
+//import { usuario } from "../elements/variablesGlobales";
 import { CarritoIcono, IconoMenu, IconoUsuarioLogin, IconoLogout, IconoUser } from "./icons"
 import { Button, Container,FormLabel,Nav, Navbar, Offcanvas} from "react-bootstrap"
 import "../styles/navBar.css"
@@ -9,18 +9,19 @@ import { useState } from "react";
 export const NavBar = () => {
   const Navigate = useNavigate();
   const login = window.localStorage.getItem("isLogedIn");
-
+  const username  = window.localStorage.getItem("username")|| "Muggle";
+  console.log("Estado de Login:", login);
+  console.log("Nombre de Usuario:", username);
+  
   const logOut = () => {
-    window.localStorage.removeItem("isLogedIn")
+    window.localStorage.removeItem("isLogedIn");
+    window.localStorage.removeItem("username");
     Navigate('/Login');
   }
 
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-
-
 
     const {abrirCarrito,cantidadCarrito} = useCarritoCompras()
     return (
@@ -59,7 +60,7 @@ export const NavBar = () => {
               </Nav>
               {login ? (
                 <FormLabel style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 1rem", position: "relative" }}>
-                      <IconoUser/>  ¡Hola {usuario.nombre}!
+                      <IconoUser/>  ¡Hola {username}!
                       <abbr title="Cerrar sesión">
                           <Button onClick={logOut} style={{ padding: 0, border: 'none', background: 'transparent', cursor: 'pointer' }}>
                               <IconoLogout/>
@@ -88,8 +89,6 @@ export const NavBar = () => {
               </Button>
             </Container>
           </Navbar>
-          
         </>
-        
       );
     }
