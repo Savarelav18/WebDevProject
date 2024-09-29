@@ -5,12 +5,12 @@ import com.learning.sortilegiosback.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.http.HttpStatus;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api/usuarios")
 public class UsuarioController {
     private final UsuarioService usuarioService;
@@ -54,5 +54,15 @@ public class UsuarioController {
         Optional<Usuario> usuario = usuarioService.obtenerPorEmail(email);
         return usuario.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> validarLogin(@RequestBody Usuario usuario) {
+        Optional<Usuario> usuarioExistente = usuarioService.obtenerPorUsername(usuario.getUsername());
+        if (usuarioExistente.isPresent() && usuarioExistente.get().getPassword().equals(usuario.getPassword())) {
+            return ResponseEntity.ok("Login exitoso");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuario o contraseña incorrectos");
+        }
     }
 }
