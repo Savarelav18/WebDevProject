@@ -64,6 +64,8 @@ public class ProductosService {
                 .divisa(producto.getDivisa().getNombre())
                 .calificacion(getPromedioCalificacion(producto.getId()))
                 .imagenes(imagenes.stream().map(Imagen::getUrl).toList())
+                .efectoVisual(producto.getEfectoVisual())
+                .efecto(producto.getEfecto())
                 .comentarios(resenas.stream().map(comentario -> {
                     return ComentarioDTO.builder()
                             .id(comentario.getId())

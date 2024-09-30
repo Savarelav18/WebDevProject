@@ -25,6 +25,8 @@ public class Producto {
     String duracion;
     Double precio;
     Integer stock;
+    String efectoVisual;
+    String efecto;
 
     @ManyToOne
     @JoinColumn(name= "divisa_id", nullable = false)
