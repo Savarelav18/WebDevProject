@@ -21,7 +21,7 @@ public class CompraController {
         return new ResponseEntity<>(compraService.createCompra(username), HttpStatus.OK);
     }
 
-    @PostMapping
+    @PostMapping("/all")
     public ResponseEntity<?> getAllCompras(@RequestBody CompraReqDTO username){
         return new ResponseEntity<>(compraService.getAllCompras(username), HttpStatus.OK);
     }
