@@ -1,87 +1,113 @@
-import "../styles/Login.css"
-import { NavBar } from "./navBar"
+import "../styles/Login.css";
+import { NavBar } from "./navBar";
 import { useState } from "react";
-import { usuario } from "../elements/variablesGlobales";
 import { useNavigate } from "react-router-dom";
-import PasswordInput from "../elements/showPassword";
-/* import { useUserForm } from "../elements/variablesGlobales"; */
+import PasswordInput from "../elements/showPassword"; 
+import { Form, Button, Spinner } from "react-bootstrap";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import axios from 'axios';
 
-
-export const LoginForm = () =>{
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState(false);
-    const [errorMensaje, setErrorMensaje] = useState("");
-    const [loading, setLoading] = useState(false);
-    const Navigate = useNavigate();
-
-
-    const handleSubmit = (e: { preventDefault: () => void; }) => {
-        e.preventDefault();
-
-        if (username==="" || password==="") {
-            setError(true);
-            setErrorMensaje("Todos los campos son obligatorios")
-
-            return
-        } 
-
-        else if (username != usuario.nombre) {
-            setError(true);
-            setErrorMensaje("Usuario no encontrado")
-            return;
-        }
-
-        else if (password != usuario.contraseña) {
-            setError(true);
-            setErrorMensaje("Contraseña incorrecta")
-            return;
-        }
-
-        setError(false);
-        setLoading(true);
-        setErrorMensaje("✨¡Alohomora!✨")
-
-        setTimeout(() => {
-            setLoading(false);
-            Navigate('/');
-            window.localStorage.setItem("isLogedIn", 'true');
-        }, 2000);
-    }
-
-
-    return (<>
-
-    <NavBar/>
-    <link rel="stylesheet" href="../styles/Login.css"></link>
-    <div className="content">
-        <div className="formulario"  >
-            <h1>INICIA SESIÓN</h1>
-            <p>¿Aún no tienes cuenta?</p> 
-            
-            <span> <a href="/Register"> REGISTRATE </a> </span> 
-            <form method="post" onSubmit={handleSubmit}> 
-                <label>USUARIO*</label>
-                <input  
-                type='text'
-                id="usuario"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                /> 
-                <label>CONSTRASEÑA*</label>
-                <PasswordInput password={password} setPassword={setPassword} />
-                <div className="mensaje">
-                {error? (<p className="error">{errorMensaje}</p>) : (<p>{errorMensaje}</p>)} </div>
-                <button disabled={loading}>{loading ? "Cargando..." : "INICIAR SESIÓN"}</button>
-                
-            </form>
-        </div>
-        <div className="imagen"> 
-            <img src="src/assets/logo.png" />
-        </div> 
-
-    </div>  
-        
-    </>
-    )
+interface LoginFormData {
+    username: string;
+    password: string;
 }
+
+export const LoginForm = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm<LoginFormData>();
+    const [password, setPassword] = useState(""); // Estado para la contraseña
+    const [loading, setLoading] = useState(false);
+    const [errorMensaje, setErrorMensaje] = useState("");
+    const navigate = useNavigate();
+
+    const notifySuccess = (message: string) => {
+      toast.success(message, {
+        position: "top-center",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+      });
+    };
+
+    const onSubmit = async (data: LoginFormData) => {
+      setLoading(true);
+      setErrorMensaje("");
+
+      try {
+        // Hacemos una solicitud POST a la API para validar el inicio de sesión
+        const response = await axios.post("http://localhost:8080/api/usuarios/login", {
+          username: data.username,
+          password: password, 
+        });
+
+        if (response.status === 200) {
+            setTimeout(() => {
+              setLoading(false);
+              notifySuccess("¡La cámara de los secretos ha sido abierta!");
+              window.localStorage.setItem("isLogedIn", "true");
+              window.localStorage.setItem("username", data.username); 
+              navigate('/');
+            }, 2000); 
+          }
+        } catch (error: any) {
+          setLoading(false);
+          if (error.response && error.response.status === 401) {
+            setErrorMensaje("Usuario o contraseña incorrectos.");
+          } else {
+            setErrorMensaje("Ocurrió un error al intentar iniciar sesión.");
+          }
+        }
+      };
+
+    return (
+      <>
+        <NavBar />
+        <div className="content">
+          <div className="formulario">
+            <h1>INICIA SESIÓN</h1>
+            <p>¿Aún no tienes cuenta?</p>
+            <span>
+              <a href="/Register">REGISTRATE</a>
+            </span>
+            <Form onSubmit={handleSubmit(onSubmit)}>
+              <Form.Group controlId="formUsername" className="mb-3">
+                <Form.Label>USUARIO*</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Introduce tu nombre de usuario"
+                  {...register('username', { required: "El nombre de usuario es obligatorio" })}
+                />
+                {errors.username && <p className="mensaje">{errors.username.message}</p>}
+              </Form.Group>
+
+              <Form.Group controlId="formPassword" className="mb-3">
+                <Form.Label>CONTRASEÑA*</Form.Label>
+                <PasswordInput password={password} setPassword={setPassword} />
+                {errors.password && <p className="mensaje">{errors.password.message}</p>}
+              </Form.Group>
+
+              <div className="mensaje">
+                {errorMensaje && <p className="mensaje">{errorMensaje}</p>}
+              </div>
+
+              <Button variant="primary" type="submit" disabled={loading}>
+                {loading ? (
+                  <>
+                    <Spinner animation="border" size="sm" /> "✨¡Alohomora!🔑"
+                  </>
+                ) : (
+                  "INICIAR SESIÓN"
+                )}
+              </Button>
+            </Form>
+          </div>
+          <div className="imagen">
+            <img src="src/assets/logo.png" alt="Logo" />
+          </div>
+        </div>
+      </>
+    );
+};

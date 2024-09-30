@@ -3,37 +3,51 @@
 
 .content {
   display: flex;
-  margin-top: 5%;
+  margin-top: 3%;
   width: 100%;
+  height: 100%;
+  align-items: stretch; 
   align-items: flex-start;
   justify-content: center;
   font-family: 'Cinzel';
+  margin-right: 1%;
 }
 
 .formulario {
-  width: 400px;
-  height: 481px;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
+  max-width: 360px; 
+  width: 100%; 
+  height: 510px; 
+  border-radius: 30px 0 0 30px;
+  margin-left: 1%;
   background: #FFFFFF;
-  opacity: .7;
+  opacity: .8;
 }
 
 .imagen{
+  width: 340px;
+  height: 510px; 
+  top: 0;
+  z-index: 0;
   background-color: #038BBB;
-  border-color: black;
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.imagen img{ width: 360px;}
+.imagen img{ 
+  margin: 10%;
+  width: 40vw;
+  height: auto;
+  object-fit: cover;
+}
 
 .formulario p{
   margin-top: 0.1rem;
   text-align: center;
   display: inline-block;
   width: 100%;
-  font-size: 15px;
+  font-size: 1em;
 }
 
 .formulario span a{
@@ -46,12 +60,12 @@
   display: inline-block;
   width: 100%;
   font-family: 'Cinzel-Black';
-  font-size: 19px;
+  font-size: 1.3em;
 } 
 
 .formulario h1{
   text-align: center;
-  margin-top: 3.5rem;
+  margin-top: 3.3rem;
 }
 
 .formulario form {
@@ -59,7 +73,7 @@
   padding: 4px 30px 41px 40px;
   box-sizing: border-box;
   position: relative;
-  font-size: 18px;
+  font-size: 1.1em;
 }
 
 .mensaje {
@@ -67,8 +81,8 @@
   margin-top: 10px; 
   text-align: center;
 }
-.mensaje p {
-  font-size: 16px;
+p.mensaje {
+  font-size: 0.8em;
   color: #821620;
   margin: 0;
 }
@@ -77,10 +91,10 @@
   position:relative;
   margin: 0.1em 0 1.1em 0;
   width: 100%;
-  padding: 0 7px 0 7px;
+  padding: 0 0.3em 0 0.3em;
   box-sizing: border-box;
-  height: 40px;
-  font-size: 18px;
+  height: auto;
+  font-size: 1.1em;
   font-family: 'Berylium', sans-serif;
   transition: 0.3s;
 }
@@ -91,14 +105,16 @@ input[type="password"]::-webkit-inner-spin-button,
 input[type="password"]::-webkit-textfield-decoration-container {
     display: none;
 }
-.formulario button{
+
+.formulario Button{
+  margin-bottom: 5%;
   width: 100%;
-  height: 47px;
+  height: auto;
   border: 0.5px groove;
   background: #038BBB;
   border-color: rgb(58, 58, 58);
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 1em;
   font-family: 'Cinzel';
   color: white;
   cursor: pointer;
@@ -116,37 +132,43 @@ input[type="password"]::-webkit-textfield-decoration-container {
   }
 
 }
-@media (max-width: 768px) {
+  
+
+@media (max-width: 575px) {
   .content {
-    margin-top: 20%;
+    margin-top: 10%;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    font-weight: 600;
-    margin-top: 20%;
+    position: relative; 
   }
   
   .formulario {
-    width: 95%; /* Ajusta el tamaño del formulario en pantallas pequeñas */
+    width: 95%; 
     height: auto; 
     border-radius: 20px;
     z-index: 1;
+    opacity: 0.7;
   } 
+
   .imagen {
-    width: 100%;
-    height: 400px; /* Controla el tamaño de la imagen en pantallas pequeñas */
+    margin-top: 6%;
+    width: 40%;
+    height: 400px; 
+    position: absolute; 
     top: 0;
-    left: 0;
-    position: absolute; /* Mantén la imagen detrás */
     z-index: 0;
     background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  
   .imagen img {
+    width: 50vw;
     opacity: 0.4;
-    border-radius: 0; 
-    position: absolute;  /* Ajusta el radio de la imagen */
   }
-  .mensaje p {
+
+  p.mensaje {
     font-size: 13px;
     color: #821620;
     margin: 0;
