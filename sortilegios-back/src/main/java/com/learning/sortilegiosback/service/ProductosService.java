@@ -93,7 +93,7 @@ public class ProductosService {
                 .advertencia(productoDTO.getAdvertencia())
                 .duracion(productoDTO.getDuracion())
                 .precio(productoDTO.getPrecio())
-                .stock(productoDTO.getCantidad().intValue())
+                .stock(productoDTO.getCantidad())
                 .categoria(categoriaRepository.findByNombre(productoDTO.getCategoria()).orElseThrow(() -> new NotFoundException("Categoria no encontrada")))
                 .divisa(divisaRepository.findByNombre(productoDTO.getDivisa()).orElseThrow(() -> new NotFoundException("Divisa no encontrada")))
                 .imagenes(Set.of())

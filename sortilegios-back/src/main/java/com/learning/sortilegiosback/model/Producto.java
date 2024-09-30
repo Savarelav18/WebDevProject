@@ -23,7 +23,7 @@ public class Producto {
     String advertencia;
     String duracion;
     Double precio;
-    Integer stock;
+    Long stock;
     String efectoVisual;
     String efecto;
 
