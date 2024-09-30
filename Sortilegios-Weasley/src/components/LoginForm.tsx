@@ -23,7 +23,7 @@ export const LoginForm = () => {
     const notifySuccess = (message: string) => {
       toast.success(message, {
         position: "top-center",
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -38,19 +38,23 @@ export const LoginForm = () => {
 
       try {
         // Hacemos una solicitud POST a la API para validar el inicio de sesión
-        const response = await axios.post("http://localhost:8080/api/usuarios/login", {
-          username: data.username,
-          password: password, 
+        const response = await axios.get(`http://localhost:8080/api/usuarios/${data.username}`, {
         });
 
+        console.log(response)
+
         if (response.status === 200) {
+            if (data.username === response.data.username && password === response.data.password){
             setTimeout(() => {
               setLoading(false);
               notifySuccess("¡La cámara de los secretos ha sido abierta!");
               window.localStorage.setItem("isLogedIn", "true");
-              window.localStorage.setItem("username", data.username); 
+              window.localStorage.setItem("username", response.data.username);
+              window.localStorage.setItem("rol", response.data.rol); 
               navigate('/');
-            }, 2000); 
+              
+            }, 1000); 
+            }
           }
         } catch (error: any) {
           setLoading(false);

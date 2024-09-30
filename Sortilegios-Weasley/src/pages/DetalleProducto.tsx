@@ -20,7 +20,6 @@ export function DetalleProducto() {
         }).then(data => setProducto(data));
     }, [])
     const navigate = useNavigate()
-
     return (
         <>
             <NavBar />

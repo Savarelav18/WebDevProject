@@ -6,6 +6,7 @@ interface ComentariosProps {
     comentarios: Comentario[];
 }
 export function Comentarios({ comentarios }: ComentariosProps) {
+    
     const [comentariosList, setComentariosList] = useState(comentarios);
     const agregarComentario = (comentario: Comentario) => {
         if (comentariosList.length === 0) {
@@ -19,7 +20,7 @@ export function Comentarios({ comentarios }: ComentariosProps) {
     }
     return (
         <div className="container-comentarios" style={{ marginTop: "5rem" }}>
-            <CrearComentario agregarComentario={agregarComentario} />
+            <CrearComentario/>
             {comentariosList.map(comentario => (<Coment comentario={comentario} key={comentario.id} />))}
         </div>
     )

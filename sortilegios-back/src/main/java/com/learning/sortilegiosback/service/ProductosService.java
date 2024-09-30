@@ -71,6 +71,7 @@ public class ProductosService {
                             .id(comentario.getId())
                             .contenido(comentario.getComentario())
                             .calificacion(comentario.getCalificacion())
+                            .fecha(comentario.getFecha().toString())
                             .usuario(comentario.getUsuario().getUsername())
                             .build();
                 }).toList())

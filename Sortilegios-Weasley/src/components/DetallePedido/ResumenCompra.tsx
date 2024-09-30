@@ -6,6 +6,7 @@ import { useState } from "react";
 import imag from "../../assets/DetallePedido/selloGringottts.png";
 import { useNavigate } from "react-router-dom";
 import {ItemCarrito} from "../../context/carrito.tsx"
+import { Button, FormControl } from "react-bootstrap";
 interface ResumenCompraProps {
     productosCarro: ItemCarrito[];
 }
@@ -30,7 +31,7 @@ export function ResumenCompra({ productosCarro }:ResumenCompraProps) {
             }
         });
     }
-    console.log(productosCarro)
+
     return (
         <div className="resumen-compra">
             <h2>Resumen de compra</h2>
@@ -48,14 +49,14 @@ export function ResumenCompra({ productosCarro }:ResumenCompraProps) {
             <hr />
             <form action="">
                 <label htmlFor="direccion">Dirección de entrega: </label>
-                <input type="text" id="direccion" onChange={(e) => setDireccion(e.target.value)} required />
+                <FormControl type="text" id="direccion" onChange={(e) => setDireccion(e.target.value)} required />
                 <p className="nota">Querido comprador, recuerde que al ser artículos mágicos al momento de realizar la compra los productos llegaran inmediatamente mediante nuestro sistema de teletransporte de productos, así que verifique que su dirección este correcta.</p>
 
 
-                <button className="button-compra" onClick={handleCompra} type="submit">
+                <Button className="button-compra" onClick={handleCompra} type="submit">
                     <p>Comprar</p>
                     <img src={imag} />
-                </button>
+                </Button>
             </form>
 
         </div>

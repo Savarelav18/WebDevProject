@@ -23,7 +23,7 @@
 }
 
 .resumen-compra {
-  width: 250px;
+  width: 450px;
   background-color: white;
   padding: 20px;
   box-sizing: border-box;
@@ -85,7 +85,6 @@
   color: White;
   border: none;
   font-family: "Cinzel";
-  border-radius: 10px;
   font-weight: 500;
   height: 2em;
   padding: 3px;
@@ -123,7 +122,6 @@ form {
 #direccion {
   margin: 1em 0 0 0;
   width: 100%;
-  height: 1rem;
   font-family: "Cinzel";
 }
 .nota {
@@ -148,10 +146,10 @@ form a {
 }
   .contenedor-fondo {
     display: flex;
-    flex-direction: column-reverse; 
+    flex-direction: column; 
   }
   .descp-prod p {
-    font-size: 2.3vw;
+    font-size: 3.3vw;
   }
   .contenedor-productos .producto-muestra {
     margin-bottom: 4%;

@@ -3,6 +3,7 @@ import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivi
 // import { ProductoCarrito } from "../../types.ts";
 import { CantidadPedido } from "../../elements/DetallePedido/cantidadProductoPedido.tsx";
 import { ItemCarrito, useCarritoCompras } from "../../context/carrito.tsx";
+import { Button } from "react-bootstrap";
 interface ProductoCompraProps {
     productoCarrito: ItemCarrito;
 }
@@ -19,7 +20,7 @@ export function ProductoCompra({ productoCarrito}: ProductoCompraProps) {
                     <p>{producto?.descripcion}</p>
                     <div className="botones">
                         <div className="bot">
-                            <button className="button-eliminar" onClick={() => removerProducto(productoCarrito.id)}>Eliminar</button>
+                            <Button className="button-eliminar" onClick={() => removerProducto(productoCarrito.id)}>Eliminar</Button>
                             <CantidadPedido cantidad={productoCarrito.cantidad} id={productoCarrito.id} />
                         </div>
                         <div className="cost">

@@ -9,13 +9,16 @@ import { useState } from "react";
 export const NavBar = () => {
   const Navigate = useNavigate();
   const login = window.localStorage.getItem("isLogedIn");
-  const username  = window.localStorage.getItem("username")|| "Muggle";
+  const username  = window.localStorage.getItem("username");
+  const userRole  = window.localStorage.getItem("rol");
   console.log("Estado de Login:", login);
   console.log("Nombre de Usuario:", username);
+  console.log("Nombre de Rol:", userRole);
   
   const logOut = () => {
     window.localStorage.removeItem("isLogedIn");
     window.localStorage.removeItem("username");
+    window.localStorage.removeItem("rol");
     Navigate('/Login');
   }
 
@@ -26,38 +29,44 @@ export const NavBar = () => {
     const {abrirCarrito,cantidadCarrito} = useCarritoCompras()
     return (
         <>
-          <Navbar className="shadow-sm mb-3 sticky-top" style={{backgroundColor:"#E19F41"}}>
-            <Container>
-              <Navbar.Brand href="/">
-                <img
-                  alt=""
-                  src="../src/assets/logonavbar.png"
-                  width="75"
-                  height="75"
-                  className="d-inline-block align-center"
-                />{' '}
-            </Navbar.Brand>
-              <Nav className="me-auto" id="navbar-menu">
-                <Nav.Link to="/" as={NavLink} style={{margin:"0 1.5rem"}}>Inicio</Nav.Link>
-                <Nav.Link to="/Tienda" as={NavLink} style={{margin:"0 1.5rem"}}>Tienda</Nav.Link>
-                <Nav.Link to="/SobreNosotros" as={NavLink} style={{margin:"0 1.5rem"}}>Sobre nosotros</Nav.Link> 
-              </Nav>
-              <Nav className="me-auto" id="nav_toggle">
-                <Button id="botonMenu" onClick={handleShow}><IconoMenu/></Button>
-                <Offcanvas show={show} onHide={handleClose}>
-                <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Menú</Offcanvas.Title>
-                </Offcanvas.Header>
-                <Offcanvas.Body id="ContentMenu">
-                  <Nav.Link className="active" to="/" as={NavLink}>Inicio</Nav.Link>
-                  <Nav.Link to="/Tienda" as={NavLink}>Tienda</Nav.Link>
-                  <Nav.Link to="/SobreNosotros" as={NavLink}>Sobre nosotros</Nav.Link>
-                  <Container id="ImagenMenu">
-                    <img src="https://i.pinimg.com/736x/e0/d9/c1/e0d9c1002f137376a32fb9e2510136de.jpg"></img>
-                  </Container>
-                </Offcanvas.Body>
-              </Offcanvas>
-              </Nav>
+          <Navbar className="shadow-sm mb-3 sticky-top" style={{ backgroundColor: "#E19F41" }}>
+        <Container>
+          <Navbar.Brand href="/">
+            <img
+              alt=""
+              src="../src/assets/logonavbar.png"
+              width="75"
+              height="75"
+              className="d-inline-block align-center"
+            />{' '}
+          </Navbar.Brand>
+          <Nav className="me-auto" id="navbar-menu">
+            <Nav.Link to="/" as={NavLink} style={{ margin: "0 1.5rem" }}>Inicio</Nav.Link>
+            <Nav.Link to="/Tienda" as={NavLink} style={{ margin: "0 1.5rem" }}>Tienda</Nav.Link>
+            <Nav.Link to="/SobreNosotros" as={NavLink} style={{ margin: "0 1.5rem" }}>Sobre nosotros</Nav.Link>
+
+            {/* Validar si el usuario es administrador */}
+            {userRole === "ADMIN" && (
+              <Nav.Link to="/RegistrarProducto" as={NavLink} style={{ margin: "0 1.5rem" }}>Registrar Producto</Nav.Link>
+            )}
+          </Nav>
+
+          <Nav className="me-auto" id="nav_toggle">
+            <Button id="botonMenu" onClick={handleShow}><IconoMenu /></Button>
+            <Offcanvas show={show} onHide={handleClose}>
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title>Menú</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body id="ContentMenu">
+                <Nav.Link className="active" to="/" as={NavLink}>Inicio</Nav.Link>
+                <Nav.Link to="/Tienda" as={NavLink}>Tienda</Nav.Link>
+                <Nav.Link to="/SobreNosotros" as={NavLink}>Sobre nosotros</Nav.Link>
+                <Container id="ImagenMenu">
+                  <img src="https://i.pinimg.com/736x/e0/d9/c1/e0d9c1002f137376a32fb9e2510136de.jpg" alt="Menú" />
+                </Container>
+              </Offcanvas.Body>
+            </Offcanvas>
+          </Nav>
               {login ? (
                 <FormLabel style={{ display: "flex", justifyContent: "center", alignItems: "center", margin: "0 1rem", position: "relative" }}>
                       <IconoUser/>  ¡Hola {username}!
