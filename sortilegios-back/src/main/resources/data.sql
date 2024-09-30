@@ -61,3 +61,5 @@ INSERT INTO imagen (id, producto_id, url) VALUES (18, 5, '..//src/assets//firewo
 INSERT INTO imagen (id, producto_id, url) VALUES (19, 5, '..//src/assets//firework2.jpg');
 
 INSERT INTO imagen (id, producto_id, url) VALUES (20, 5, '..//src/assets//firework3.jpg');
+
+INSERT INTO usuario (username, password, email, rol) VALUES ('admin', 'admin', 'admin@mail.com', 'ADMIN');
