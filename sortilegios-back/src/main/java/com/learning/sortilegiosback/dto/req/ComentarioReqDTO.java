@@ -14,7 +14,6 @@ import java.util.Date;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ComentarioReqDTO {
     String comentario;
-    Date fecha;
     Double calificacion;
     String titulo;
     Long productoId;

@@ -13,6 +13,8 @@ import com.learning.sortilegiosback.repository.IUsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +56,7 @@ public class ResenaService {
         Resena resena = Resena.builder()
                 .id(resenaRepository.count()+1)
                 .calificacion(comentario.getCalificacion())
-                .fecha(comentario.getFecha())
+                .fecha(LocalDate.now())
                 .titulo(comentario.getTitulo())
                 .comentario(comentario.getComentario())
                 .build();

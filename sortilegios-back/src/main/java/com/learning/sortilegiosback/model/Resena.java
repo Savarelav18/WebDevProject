@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -19,7 +20,7 @@ public class Resena {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String comentario;
-    Date fecha;
+    LocalDate fecha;
     Double calificacion;
     String titulo;
 
