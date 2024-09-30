@@ -1,6 +1,6 @@
 import { mockProductos } from "../../mocks/MockProductos";
 import { magicDivisesToMuggle, COPFormmater } from "../../services/ConversorDivisas";
-import { ProductoCarrito } from "../../types.ts";
+// import { ProductoCarrito } from "../../types.ts";
 import { CantidadPedido } from "../../elements/DetallePedido/cantidadProductoPedido.tsx";
 import { ItemCarrito, useCarritoCompras } from "../../context/carrito.tsx";
 interface ProductoCompraProps {
