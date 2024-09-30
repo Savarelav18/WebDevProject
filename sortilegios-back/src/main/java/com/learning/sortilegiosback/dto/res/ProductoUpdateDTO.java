@@ -21,11 +21,11 @@ public class ProductoUpdateDTO {
     private String duracion;
     private Double precio;
     private Long cantidad;
-    private Categoria categoria;
-    private Divisa divisa;
+    private String categoria;
+    private String divisa;
     private Double calificacion;
     private String efectoVisual;
     private String efecto;
-    private List<Imagen> imagenes;
+    private List<String> imagenes;
     private List<ComentarioDTO> comentarios;
 }

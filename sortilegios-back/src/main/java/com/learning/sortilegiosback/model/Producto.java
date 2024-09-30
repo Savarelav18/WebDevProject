@@ -16,7 +16,6 @@ import java.util.Set;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Producto {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String nombre;
     String descripcion;

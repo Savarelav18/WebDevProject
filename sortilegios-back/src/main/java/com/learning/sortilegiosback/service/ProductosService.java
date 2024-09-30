@@ -82,10 +82,11 @@ public class ProductosService {
         return listaResena.stream().map(Resena::getCalificacion).reduce(Double::sum).orElse(0.0) / listaResena.size();
     }
 
-    public ProductoDTO crearProducto(ProductoUpdateDTO productoDTO) {
-
+    public MessageDTO crearProducto(ProductoUpdateDTO productoDTO) {
+        Long productoId = productoRepository.count()+1;
         // Crear la entidad Producto
         Producto nuevoProducto = Producto.builder()
+                .id(productoId)
                 .nombre(productoDTO.getNombre())
                 .descripcion(productoDTO.getDescripcion())
                 .creador(productoDTO.getCreador())
@@ -93,27 +94,26 @@ public class ProductosService {
                 .duracion(productoDTO.getDuracion())
                 .precio(productoDTO.getPrecio())
                 .stock(productoDTO.getCantidad().intValue())
-                .categoria(productoDTO.getCategoria())
-                .divisa(productoDTO.getDivisa())
-                .imagenes((Set<Imagen>) productoDTO.getImagenes())
-                .resenas(null)
+                .categoria(categoriaRepository.findByNombre(productoDTO.getCategoria()).orElseThrow(() -> new NotFoundException("Categoria no encontrada")))
+                .divisa(divisaRepository.findByNombre(productoDTO.getDivisa()).orElseThrow(() -> new NotFoundException("Divisa no encontrada")))
+                .imagenes(Set.of())
+                .resenas(Set.of())
                 .build();
-
-        // Guardar el nuevo producto en la base de datos
         Producto productoGuardado = productoRepository.save(nuevoProducto);
+        productoDTO.getImagenes().forEach(imagen -> {
+            Imagen nuevaImagen = Imagen.builder()
+                    .id(imagenRepository.count() +1)
+                    .url(imagen)
+                    .producto(productoGuardado)
+                    .build();
+            imagenRepository.save(nuevaImagen);
+        });
+        // Guardar el nuevo producto en la base de datos
+
 
         // Mapear la entidad guardada a un ProductoDTO y devolverlo
-        return ProductoDTO.builder()
-                .id(productoGuardado.getId())
-                .nombre(productoGuardado.getNombre())
-                .descripcion(productoGuardado.getDescripcion())
-                .creador(productoGuardado.getCreador())
-                .advertencia(productoGuardado.getAdvertencia())
-                .duracion(productoGuardado.getDuracion())
-                .precio(productoGuardado.getPrecio())
-                .cantidad(productoGuardado.getStock().longValue())
-                .categoria(productoGuardado.getCategoria().getNombre())
-                .divisa(productoGuardado.getDivisa().getNombre())
+        return MessageDTO.builder()
+                .mensaje("Producto creado exitosamente")
                 .build();
     }
 
